@@ -22,7 +22,7 @@ optimize:
   write_lp_file: False
   cmdline_options:
     AllowableGap: 0.01
-  debug: true
+  debug: false
   receive_duals: false
   el_gas_relation: electricity_gas_relation  # appears in build_datapackage as well
   el_key: electricity  # prefix of keywords for gas electricity relation
