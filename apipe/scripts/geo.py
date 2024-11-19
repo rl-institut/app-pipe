@@ -249,7 +249,10 @@ def reproject_simplify(
     # Filter by min size
     if min_size is not None:
         check_crs("min size filtering")
-        gdf = gdf[gdf.area > min_size]
+        if gdf.area.sum() == 0:
+            print("Total area = 0. Will skip filtering by min size.")
+        else:
+            gdf = gdf[gdf.area > min_size]
 
     # Generalize
     if simplify_tol is not None:
