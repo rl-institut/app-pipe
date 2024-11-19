@@ -119,6 +119,8 @@ rule create_pv_ground_criteria_single:
                     gdf=gpd.read_file(input[0], layer=target_layer),
                     attrs_mapping=config["pv_ground"]["attributes"],
                 ),
+                min_size=100,
+                simplify_tol=5,
                 fix_geom=True,
             )
             target_file = (
@@ -148,35 +150,6 @@ rule create_pv_ground_criteria_single:
                 file=target_file,
                 layer_name=target_layer,
             )
-
-rule create_pv_ground_criteria_merged:
-    """
-    Freiflächen-Photovoltaikanlagen Negativkriterien kombiniert
-    """
-    input:
-        rules.create_pv_ground_criteria_single.output
-    output:
-        DATASET_PATH / "data" / "pv_ground_criteria_merged.gpkg"
-    run:
-        layers = []
-        for file_in in input:
-            layer = gpd.read_file(file_in)
-            if layer.geom_type[0] == 'MultiPolygon':
-                layers.append(layer)
-        merged = gpd.GeoDataFrame(pd.concat(layers))
-
-        # Merge all layers, remove gaps and union
-        merged = gpd.GeoDataFrame(
-            crs=merged.crs.srs,
-            geometry=[merged.unary_union.buffer(10).buffer(-10)]
-        )
-
-        write_geofile(
-            gdf=reproject_simplify(merged, simplify_tol=1),
-            file=output[0],
-            layer_name="pv_ground_criteria_merged"
-        )
-
 
 rule create_wind_turbines:
     """

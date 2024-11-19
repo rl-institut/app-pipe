@@ -12,6 +12,7 @@ from apipe.scripts.data_io import load_json
 from apipe.scripts.datasets.mastr import create_stats_per_municipality
 from apipe.scripts.geo import (
     convert_to_multipolygon,
+    reproject_simplify,
     overlay,
     write_geofile,
 )
@@ -36,6 +37,54 @@ rule create_pv_ground_criteria_single:
         DATASET_PATH / "{file}.gpkg"
     shell: "cp -p {input} {output}"
 
+rule create_pv_ground_criteria_merged:
+    """
+    Freiflächen-Photovoltaikanlagen Negativkriterien kombiniert
+    Es werden Daten der RPG OLS und dem PV- und Windflächenrechner verwendet.
+    """
+    input:
+        criteria_rpg_ols=rules.preprocessed_rpg_ols_regional_plan_create_pv_ground_criteria_single.output,
+        criteria_pv_wfr=expand(
+            get_abs_dataset_path(
+                "datasets", "rli_pv_wfr_region"
+            ) / "data" / "{file}.gpkg",
+            file=[
+                "military_region",
+                "drinking_water_protection_area_region",
+                "floodplain_region"
+            ]
+        ),
+        criteria_bfn=expand(
+            get_abs_dataset_path(
+                "datasets", "bfn_protected_areas_region"
+            ) / "data" / "{file}.gpkg",
+            file=[
+                "nature_conservation_area_region",
+                "fauna_flora_habitat_region"
+            ]
+        ),
+
+    output:
+        DATASET_PATH / "pv_ground_criteria_merged.gpkg"
+    run:
+        layers = []
+        for file_in in input:
+            layer = gpd.read_file(file_in)
+            if layer.geom_type[0] == 'MultiPolygon':
+                layers.append(layer)
+        merged = gpd.GeoDataFrame(pd.concat(layers))
+
+        # Merge all layers, remove gaps and union
+        merged = gpd.GeoDataFrame(
+            crs=merged.crs.srs,
+            geometry=[merged.unary_union.buffer(10).buffer(-10)]
+        )
+
+        write_geofile(
+            gdf=reproject_simplify(merged, min_size=100, simplify_tol=5),
+            file=output[0],
+            layer_name="pv_ground_criteria_merged"
+        )
 
 rule create_pv_ground_units_filtered:
     """
