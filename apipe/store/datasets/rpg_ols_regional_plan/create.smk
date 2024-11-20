@@ -110,6 +110,7 @@ rule create_pv_ground_units_filtered:
             gdf=units,
             gdf_overlay=gpd.read_file(input.region_muns),
             retain_rename_overlay_columns={"id": "municipality_id"},
+            gdf_use_centroid=True
         )
 
         # Add capacity to units where capacity is 0
