@@ -3,7 +3,7 @@
 Geodatensätze aus Regionalplan 2018 und Vorentwurf 2024 der Regionalen
 Planungsgemeinschaft Oderland-Spree.
 
-## Sachlicher Teilregionalplan "Windenergienutzung" 2018 (unwirksam)
+## Sachlicher Teilregionalplan "Windenergienutzung" 2018
 
 Geodaten aus
 [Sachlichen Teilplan Wind 2018](https://www.planungsregion-abw.de/regionalplanung/teilplan-windenergie/teilplan-2018/).
@@ -11,13 +11,16 @@ Geodaten aus
 - Eignungsgebiete: `Windeignungsgebiete_Satzung_2018_OLS.gpkg`
   (Quelle: Regionale Planungsgemeinschaft OLS)
 
-## Sachlicher Teilregionalplan "Erneuerbare Energien" 2024 (in Aufstellung)
+## 1. Entwurf Sachlicher Teilregionalplan "Erneuerbare Energien" 2024 (in Aufstellung)
 
 Geodaten aus Planentwurf des
 [Sachlichen Teilregionalplan EE 2024](https://www.rpg-oderland-spree.de/regionalplaene/sachlicher-teilregionalplan-erneuerbare-energien).
 
 - Vorranggebiete: `VR_Windenergienutzung_2024_RPG_OLS.gpkg`, Quelle:
   [Regionale Planungsgemeinschaft OLS](https://www.rpg-oderland-spree.de/regionalplaene/sachlicher-teilregionalplan-erneuerbare-energien)
+
+**Hinweis:** Der 1. Entwurf wird derzeit überarbeitet, die im Tool verwendeten
+Vorranggebiete unterliegen Änderungen.
 
 ## Freiflächen-Photovoltaikanlagen
 
@@ -32,7 +35,7 @@ Geodaten aus Planentwurf des
 ## Windenergieanlagen
 
 - Windenergieanlagen in OLS in verschiedenen Genehmigungstatus (Stand:
-  Dezember 2023), Quelle: Regionale Planungsgemeinschaft OLS
-  - `WEA_genehmigt_09012024.gpkg`
-  - `WEA_geplant_09012024.gpkg`
-  - `WEA_realisiert_09012024.gpkg`
+  08.10.2024), Quelle: Regionale Planungsgemeinschaft OLS
+  - `Windenergieanlagen_vor_Inbetriebnahme_OLS.gpkg`
+  - `Windenergieanlagen_im_Verfahren_OLS.gpkg`
+  - `Windenergieanlagen_in_Betrieb_OLS.gpkg`

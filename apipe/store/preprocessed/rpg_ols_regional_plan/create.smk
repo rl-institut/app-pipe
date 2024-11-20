@@ -158,8 +158,8 @@ rule create_wind_turbines:
     input:
         expand(
             get_abs_dataset_path("raw", "rpg_ols_regional_plan") / "data" /
-            "WEA_{status}_09012024.gpkg",
-            status=["genehmigt", "geplant", "realisiert"]
+            "Windenergieanlagen_{status}_OLS.gpkg",
+            status=["vor_Inbetriebnahme", "im_Verfahren", "in_Betrieb"]
         )
     output:
         expand(
