@@ -123,7 +123,7 @@ rule create_pv_ground_units_filtered:
         )
         units = units.assign(capacity_net_inferred=0)
         mask = (
-            (units.status.isin(["Planung", "genehmigt"])) &
+            #(units.status.isin(["Planung", "genehmigt"])) &
             (units.capacity_net == 0)
         )
         units["capacity_net"].update(
