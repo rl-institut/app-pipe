@@ -1,4 +1,4 @@
-# Geodaten PV- und Windflächenrechner
+# Schutzgebiete
 
 Schutzgebiete des Bundesamts für Naturschutz, zu LAEA Europe (EPSG:3035)
 umprojiziert und auf die Regionsgrenzen zugeschnitten.
