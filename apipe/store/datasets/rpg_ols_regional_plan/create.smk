@@ -259,3 +259,41 @@ rule create_wind_power_stats_muns:
                 DATASET_PATH /
                 f"rpg_ols_wind_stats_muns_{status}.csv"
             )
+
+rule create_wind_power_stats_operating_over_time:
+    """
+    Create stats on operating units: count and power
+    """
+    input:
+        units=DATASET_PATH / "rpg_ols_wind_operating.gpkg"
+    output:
+        stats=DATASET_PATH / "rpg_ols_wind_stats_operating_over_time.csv"
+    run:
+        units = gpd.read_file(input.units)
+        units["ts"] = pd.to_datetime(units.commissioning_date)
+        stats = {}
+        for year in config["wind_stats_operating_years"]:
+            stats.update({year: units.loc[
+                (~units.ts.isna()) &
+                (units.ts <= pd.to_datetime(f"{year}-12-31"))
+                ].capacity_net.agg(["sum", "count"]
+                ).rename({"sum": "capacity_net"})
+            })
+
+        stats_df = pd.DataFrame.from_dict(stats).T
+
+        count_filtered = stats_df.loc[stats_df.index == stats_df.index.max()]["count"].iloc[0]
+        if count_filtered < len(units):
+            print(
+                f"WARNING: Number of turbines for {stats_df.index.max()} is "
+                f"{count_filtered} but total in file is {len(units)}. "
+                f"Most likely, some commissioning dates are missing which "
+                f"leads to wrong numbers for max year! An additional line with "
+                f"totals will be added."
+            )
+            stats.update({"total": units.capacity_net.agg(["sum", "count"]
+                ).rename({"sum": "capacity_net"})})
+            stats_df = pd.DataFrame.from_dict(stats).T
+
+        stats_df.index.name = "year"
+        stats_df.to_csv(output.stats)

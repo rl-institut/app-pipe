@@ -1,3 +1,12 @@
 ##############################################################################
 # This file holds configuration parameters for the creation of this dataset. #
 ##############################################################################
+
+# Years for wind
+wind_stats_operating_years:
+    [
+      2010,
+      2015,
+      2020,
+      2024
+    ]
