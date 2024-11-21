@@ -190,6 +190,57 @@ rule create_pv_ground_power_stats_muns:
             )
 
 
+rule create_pv_ground_power_stats_operating_over_time:
+    """
+    Create stats on operating units: count and power
+    """
+    input:
+        units=DATASET_PATH / "rpg_ols_pv_ground_operating.gpkg"
+    output:
+        stats=DATASET_PATH / "rpg_ols_pv_ground_stats_operating_over_time.csv"
+    run:
+        units = gpd.read_file(input.units)
+        units["ts1"] = pd.to_datetime(
+            units.construction_end_date,
+            format="mixed"
+        )
+        units["ts2"] = pd.to_datetime(
+            units.loc[(~units.year.isna()) & (units.year > 0)].year,
+            format="%Y"
+        )
+        units["ts"] = units[["ts1", "ts2"]].max(axis=1)
+
+        stats = {}
+        for year in config["pv_ground_stats_operating_years"]:
+            # import pdb
+            # pdb.set_trace()
+            stats.update({year: units.loc[
+                (~units.ts.isna()) &
+                (units.ts <= pd.to_datetime(f"{year}-12-31"))
+                ].capacity_net.agg(["sum", "count"]
+                ).rename({"sum": "capacity_net"})
+            })
+
+        stats_df = pd.DataFrame.from_dict(stats).T
+
+        count_filtered = stats_df.loc[stats_df.index == stats_df.index.max()]["count"].iloc[0]
+        if count_filtered < len(units):
+            print(
+                f"WARNING: Number of PV units for {stats_df.index.max()} is "
+                f"{count_filtered} but total in file is {len(units)}. "
+                f"Most likely, some commissioning dates are missing which "
+                f"leads to wrong numbers for max year! An additional line with "
+                f"totals will be added."
+            )
+            stats.update({"total": units.capacity_net.agg(["sum", "count"]
+                ).rename({"sum": "capacity_net"})})
+            stats_df = pd.DataFrame.from_dict(stats).T
+
+        stats_df.index.name = "year"
+        stats_df["capacity_net"] = stats_df["capacity_net"].div(1e3)
+        stats_df.to_csv(output.stats)
+
+
 rule create_wind_units:
     """
     Ddd municipality ids to wind units

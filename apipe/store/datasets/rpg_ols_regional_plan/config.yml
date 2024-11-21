@@ -10,3 +10,12 @@ wind_stats_operating_years:
       2020,
       2024
     ]
+
+# Years for PV ground stats
+pv_ground_stats_operating_years:
+    [
+      2010,
+      2015,
+      2020,
+      2024
+    ]
