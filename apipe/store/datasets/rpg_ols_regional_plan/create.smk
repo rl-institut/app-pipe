@@ -131,7 +131,7 @@ rule create_pv_ground_units_filtered:
             tech_data["power_density"]["pv_ground"]
         )
         units.loc[mask, "capacity_net_inferred"] = 1
-        units["capacity_net"] = units["capacity_net"].mul(1e3)  # MW to kW
+        units["capacity_net"] = units["capacity_net"].mul(1e3).round()  # MW to kW
         print(
             "Capacity inferred: ",
             units[["status", "capacity_net"]].groupby(

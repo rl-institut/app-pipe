@@ -2,7 +2,7 @@
 # This file holds configuration parameters for the creation of this dataset. #
 ##############################################################################
 
-# Years for wind
+# Years for wind stats
 wind_stats_operating_years:
     [
       2010,
