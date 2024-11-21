@@ -19,3 +19,12 @@ pv_ground_stats_operating_years:
       2020,
       2024
     ]
+
+# PV ground: exclude planned units in municipality stats which contain one of
+# these substrings in their name.
+# Background: In some cases multiple areas are planned but only one (or some)
+# of them will be actually realized.
+pv_ground_exclude_planned_units_name_substrings:
+    [
+      #"Klimapark Steinhoefel"
+    ]

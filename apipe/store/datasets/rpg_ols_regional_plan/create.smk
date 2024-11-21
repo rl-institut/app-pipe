@@ -176,6 +176,13 @@ rule create_pv_ground_power_stats_muns:
             units = gpd.read_file(
                 DATASET_PATH / f"rpg_ols_pv_ground_{status}.gpkg"
             )
+
+            # Exclude specific predefined planned units
+            if status == "planned":
+                units["name"] = units["name"].fillna("")
+                for name_substr in config["pv_ground_exclude_planned_units_name_substrings"]:
+                    units = units.loc[~units.name.str.contains(name_substr)]
+
             units = create_stats_per_municipality(
                 units_df=units,
                 muns=gpd.read_file(input.region_muns),
