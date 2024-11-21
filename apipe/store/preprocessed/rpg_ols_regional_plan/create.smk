@@ -70,7 +70,7 @@ rule create_pv_ground:
     input:
         get_abs_dataset_path(
             "raw", "rpg_ols_regional_plan") / "data" /
-            "PV_FFA_OLS_Stand_November2023.gpkg"
+            "PV_FFA_OLS_10_2024.gpkg"
     output:
         DATASET_PATH / "data" / "rpg_ols_pv_ground.gpkg"
     run:

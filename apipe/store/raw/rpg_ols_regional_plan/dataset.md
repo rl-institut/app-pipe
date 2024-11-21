@@ -24,8 +24,8 @@ Vorranggebiete unterliegen Änderungen.
 
 ## Freiflächen-Photovoltaikanlagen
 
-- PV-Anlagen in OLS in verschiedenen Genehmigungstatus:
-  `PV_FFA_OLS_Stand_November2023.gpkg` (Stand: November 2023), Quelle: Regionale
+- PV-Anlagen in OLS in verschiedenen Genehmigungsstatus:
+  `PV_FFA_OLS_10_2024.gpkg` (Stand: Oktober 2024), Quelle: Regionale
   Planungsgemeinschaft OLS
 - Negativkriterien Freiflächen-PV aus
   [Kriteriengerüst Photovoltaik-Freiflächenanlagen](https://www.rpg-oderland-spree.de/regionalplaene/sachlicher-teilregionalplan-erneuerbare-energien):
