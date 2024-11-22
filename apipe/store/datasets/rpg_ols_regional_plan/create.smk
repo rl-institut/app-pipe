@@ -78,10 +78,19 @@ rule create_pv_ground_criteria_merged:
         merged = gpd.GeoDataFrame(
             crs=merged.crs.srs,
             geometry=[merged.unary_union.buffer(10).buffer(-10)]
+        ).explode()
+
+        # Min size filtering and simplification required due to limitation of
+        # vertices count in maplibre, cf.
+        # https://github.com/rl-institut/django-mapengine/issues/25#issuecomment-2493515600
+
+        merged = gpd.GeoDataFrame(
+            crs=merged.crs.srs,
+            geometry=[reproject_simplify(merged, min_size=1000).unary_union]
         )
 
         write_geofile(
-            gdf=reproject_simplify(merged, min_size=100, simplify_tol=5),
+            gdf=reproject_simplify(merged, simplify_tol=10),
             file=output[0],
             layer_name="pv_ground_criteria_merged"
         )

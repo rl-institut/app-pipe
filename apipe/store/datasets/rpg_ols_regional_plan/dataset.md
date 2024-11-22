@@ -14,5 +14,5 @@ erstellt. Folgende Datensätze werden hierfür verwendet:
 - Geodaten aus dem PV- und Windflächenrechner:
   [rli_pv_wfr](../../raw/rli_pv_wfr/dataset.md)
 
-Zugunsten der Darstellungsgeschwindigkeit werden heirbei Flächen < 100 m²
-vernachlässigt und Geometrien vereinfacht (Lagegenauigkeit 5 m).
+Zugunsten der Darstellungsgeschwindigkeit werden hierbei Flächen < 1000 m²
+vernachlässigt und Geometrien vereinfacht (Lagegenauigkeit 10 m).
