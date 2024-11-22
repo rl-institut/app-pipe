@@ -145,6 +145,13 @@ rule create_pv_ground_criteria_single:
                 "pv_ground_criteria_linked_open_spaces"):
                 data = create_convex_hull_open_spaces(data)
 
+            if (data.geometry.type == "MultiLineString").all():
+                print(
+                    "Data is MultiLineString, will convert to MultiPolygon "
+                    "by buffering with 5 m"
+                )
+                data["geometry"] = data.buffer(5)
+
             write_geofile(
                 gdf=convert_to_multipolygon(data),
                 file=target_file,
