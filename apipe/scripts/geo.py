@@ -252,7 +252,7 @@ def reproject_simplify(
         if gdf.area.sum() == 0:
             print("Total area = 0. Will skip filtering by min size.")
         else:
-            gdf = gdf[gdf.area > min_size]
+            gdf = gdf.loc[gdf.area > min_size]
 
     # Generalize
     if simplify_tol is not None:
