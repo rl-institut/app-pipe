@@ -1,31 +1,35 @@
-heat_central:
+electricity:
   balanced:
     True
 
-heat_decentral:
+heat_low_central:
   balanced:
     True
 
-ch4:
+heat_low_decentral:
   balanced:
     True
 
-wood:
+heat_med:
   balanced:
     True
 
-lignite:
+heat_high:
   balanced:
     True
 
-biomass:
+residual_waste:
   balanced:
     True
 
-biogas:
+biomass_solid:
   balanced:
     True
 
-#h2:
-#  balanced:
-#    True
+biomass_gas:
+  balanced:
+    True
+
+h2:
+  balanced:
+    True
