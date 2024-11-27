@@ -1,55 +1,87 @@
-# oil: Oil  Raises error as "oil" is in "boiler" -> duplicate mappings
-biomass: Biomass
-biomass-biogas_plant: Biogas plant
-biomass-import: Biomass import
-biogas: Biogas
-biogas-biogas_upgrading_plant: Biogas upgrading plant
-biogas-bpchp_central: Biogas central CHP
-biogas-bpchp_decentral: Biogas decentral CHP
-ch4-boiler: CH4 boiler
-ch4-bpchp_central: CH4 central CHP
-ch4-bpchp_decentral: CH4 decentral CHP
-ch4-extchp_central: CH4 central CCGT
-ch4-extchp_decentral: CH4 decentral CCGT
-ch4-gt: CH4 GT
-ch4-import: CH4 import
-electricity-bev_charging: BEV charging
-electricity-demand_hh: El. demand HH
-electricity-demand_cts: El. demand CTS
-electricity-demand_ind: El. demand IND
-electricity-electrolyzer: Electrolyzer
-electricity-export: El. export
-electricity-heatpump_central: Heat pump (DH)
-electricity-heatpump_decentral: Heat pump (domestic)
-electricity-import: El. import
-electricity-large_scale_battery: Large-scale battery
-electricity-small_scale_battery: Small-scale battery
-electricity-pth: res. PtH
-h2-bpchp_central: H2 central CHP
-h2-bpchp_decentral: H2 decentral CHP
-h2-extchp_central: H2 central CCGT
-h2-extchp_decentral: H2 decentral CCGT
-h2-cavern: H2 cavern
-h2-demand: H2 demand
-h2-excess: H2 excess
-h2-gt: H2 GT
-h2-import: H2 import
-h2-shortage: H2 shortage
-heat_central-demand_hh: Heat cen. demand HH
-heat_central-demand_cts: Heat cen. demand CTS
-heat_central-demand_ind: Heat cen. demand IND
-heat_central-storage: Heat cen. storage
-heat_decentral-demand_hh: Heat dec. demand HH
-heat_decentral-demand_cts: Heat dec. demand CTS
-heat_decentral-demand_ind: Heat dec. demand IND
-heat_decentral-storage: Heat dec. storage
-hydro-ror: Hydro ROR
-solar-pv_ground: PV ground
-solar-pv_rooftop: PV rooftop
-solar-thermalcollector_central: Heat cen. solar thermal collector
-solar-thermalcollector_decentral: Heat dec. solar thermal collector
-wind-onshore: Wind on
-wood-import: Wood import
-wood-extchp_central: Wood central CHP
-wood-extchp_decentral: Wood decentral CHP
-lignite-import: Lignite import
+electricity: Electricity
+heat_low_decentral: Heat (low, decentral)
+heat_low_central: Heat (low, central)
+heat_med: Heat (medium)
+heat_high: Heat (high)
+residual_waste: Residual waste
+biomass_solid: Solid biomass
+biomass_gas: Biogas
+h2: Hydrogen
+
+# Electricity demands
+electricity-demand_hh: Electricity demand (households)
+electricity-demand_cts: Electricity demand (commercial, trade, services)
+electricity-demand-mob: Electricity demand (mobility)
+electricity-demand_ind: Electricity demand (industry)
+# Heat low demands
+heat_low_central-demand_hh: Heat (low, central) demand (households)
+heat_low_central_demand_cts: Heat (low, central) demand (commercial, trade, services)
+heat_low_central_demand_ind: Heat (low, central) demand (industry)
+heat_low_decentral-demand_hh: Heat (low, decentral) demand (households)
+heat_low_decentral_demand_cts: Heat (low, decentral) demand (commercial, trade, services)
+heat_low_decentral_demand_ind: Heat (low, decentral) demand (industry)
+
+# Heat medium demands
+heat_med-demand_ind: Heat (medium) demand (industry)
+
+# Heat high demands
+heat_high-demand_ind: Heat (high) demand (industry)
+
+# Imports
+import-electricity: Electricity import
+
+# Commodities
+commodity_biomass_solid: Biomass (solid)
+commodity_biomass_gas: Biogas
+commodity_residual_waste: Residual waste
+commodity-h2: Hydrogen
+
+# Volatile
+electricity-wind: Wind (onshore)
+electricity-pv_ground: PV (ground-mounted)
+electricity-pv_agri: PV (agriculture)
+electricity-pv_rooftop: PV (rooftop)
+heat_low_decentral_solarthermal_plant: Solar thermal collector (decentral)
+heat_low_decentral_geothermal_plant: Geothermal plant (decentral)
+
+# Conversion
+biomass_solid_boiler_heat_med: Solid biomass boiler (medium heat)
+biomass_solid_boiler_heat_high: Solid biomass boiler (high heat)
+electricity_boiler_heat_med: Electric boiler (medium heat)
+electricity_boiler_heat_high: Electric boiler (high heat)
+h2_boiler_heat_med: Hydrogen boiler (medium heat)
+h2_boiler_heat_high: Hydrogen boiler (high heat)
+electricity_electrolyzer: Electrolyzer
+
+# Heat pumps
+electricity-heatpump_heat_low_central: Heat pump (low, central)
+electricity-heatpump_heat_low_decentral: Heat pump (low, decentral)
+electricity-heatpump_heat_med: Heat pump (medium)
+
+# Extraction CHP (combined heat and power)
+biomass_solid_extchp_heat_low_decentral: Solid biomass extraction CHP (low, decentral)
+biomass_solid_extchp_heat_low_central: Solid biomass extraction CHP (low, central)
+biomass_solid_extchp_heat_med: Solid biomass extraction CHP (medium)
+biomass_solid_extchp_heat_high: Solid biomass extraction CHP (high)
+biomass_gas_extchp_heat_low_decentral: Biogas extraction CHP (low, decentral)
+biomass_gas_extchp_heat_low_central: Biogas extraction CHP (low, central)
+biomass_gas_extchp_heat_med: Biogas extraction CHP (medium)
+biomass_gas_extchp_heat_high: Biogas extraction CHP (high)
+h2_extchp_heat_high: Hydrogen extraction CHP (high)
+residual_waste_extchp_heat_high: Residual waste extraction CHP (high)
+residual_waste_extchp_heat_low_central: Residual waste extraction CHP (low, central)
+
+# Backpressure CHP
+biomass_solid_bpchp_heat_low_decentral: Solid biomass backpressure CHP (low, decentral)
+biomass_solid_bpchp_heat_low_central: Solid biomass backpressure CHP (low, central)
+biomass_solid_bpchp_heat_med: Solid biomass backpressure CHP (medium)
+biomass_gas_bpchp_heat_low_decentral: Biogas backpressure CHP (low, decentral)
+biomass_gas_bpchp_heat_low_central: Biogas backpressure CHP (low, central)
+biomass_gas_bpchp_heat_med: Biogas backpressure CHP (medium)
+
+# Storage
+heat_low_decentral_storage: Heat storage (low, decentral)
+electricity_storage_battery: Battery storage (electricity)
+
+# Excess
+h2-export: Hydrogen export

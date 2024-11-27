@@ -1,61 +1,88 @@
-# oil: Öl  Raises error as "oil" is in "boiler" -> duplicate mappings
-biomass: Biomasse
-biomass-biogas_plant: Biogasanlage
-biomass-import: Biomasse Import
-biogas: Biogas
-biogas-biogas_upgrading_plant: Biogas-Aufbereitungsanlage
-biogas-bpchp_central: Biogas zentrale KWK
-biogas-bpchp_decentral: Biogas dezentrale KWK
-ch4-boiler: CH4 Boiler
-ch4-bpchp_central: CH4 zentrale KWK
-ch4-bpchp_decentral: CH4 dezentrale KWK
-ch4-extchp_central: CH4 zentrale GUD
-ch4-extchp_decentral: CH4 dezentrale GUD
-ch4-gt: CH4 GT
-ch4-import: CH4 Import
-electricity-bev_charging: BEV
-electricity-demand_hh: Strombedarf HH
-electricity-demand_cts: Strombedarf GHD
-electricity-demand_ind: Strombedarf I
-electricity-electrolyzer: Elektrolyse
-electricity-export: Stromexport
-electricity-heatpump_central: Wärmepumpe (groß)
-electricity-heatpump_decentral: Wärmepumpe (Haushalt)
-electricity-import: Stromimport
-electricity-large_scale_battery: Großbatterie
-electricity-small_scale_battery: Kleinbatterie
-electricity-pth: res. PtH
-h2-bpchp_central: H2 zentrale KWK
-h2-bpchp_decentral: H2 dezentrale KWK
-h2-cavern: H2 Kaverne
-h2-demand: H2 Bedarf
-h2-excess: H2 Überschuss
-h2-extchp_central: H2 zentrale GUD
-h2-extchp_decentral: H2 dezentrale GUD
-h2-import: H2 Import
-h2-shortage: H2 Shortage
-heat_central-demand_hh: zen. Wärmebedarf HH
-heat_central-demand_cts: zen. Wärmebedarf GHD
-heat_central-demand_ind: zen. Wärmebedarf I
-heat_central-storage: zen. Wärmespeicher
-heat_decentral-demand_hh: dez. Wärmebedarf HH
-heat_decentral-demand_cts: dez. Wärmebedarf GHD
-heat_decentral-demand_ind: dez. Wärmebedarf I
-heat_decentral-storage: dez. Wärmespeicher
-hydro-reservoir: Reservoir
-hydro-ror: Laufwasserkraft
-lignite: Braunkohle
-lignite-import: Braunkohle Import
-nuclear-st: Kernkraftwerk
-hard coal: Steinkohle
-wood: Holz
-wood-extchp_central: Holz zentrale KWK
-wood-extchp_decentral: Holz dezentrale KWK
-wood-import: Holz Import
-other: Andere
-solar-pv_ground: PV Freifläche
-solar-pv_rooftop: PV Aufdach
-solar-thermalcollector_central: zen. Wärme Solarthermiekollektor
-solar-thermalcollector_decentral: dez. Wärme Solarthermiekollektor
-wind-offshore: Wind Offshore
-wind-onshore: Wind Onshore
+electricity: Strom
+heat_low_decentral: Wärme (niedrig, dezentral)
+heat_low_central: Wärme (niedrig, zentral)
+heat_med: Wärme (mittel)
+heat_high: Wärme (hoch)
+residual_waste: Restmüll
+biomass_solid: Feste Biomasse
+biomass_gas: Biogas
+h2: Wasserstoff
+
+# Stromnachfragen
+electricity-demand_hh: Stromnachfrage (Haushalte)
+electricity-demand_cts: Stromnachfrage (Gewerbe, Handel, Dienstleistungen)
+electricity-demand-mob: Stromnachfrage (Mobilität)
+electricity-demand_ind: Stromnachfrage (Industrie)
+
+# Wärme (niedrig) Nachfragen
+heat_low_central-demand_hh: Wärme (niedrig, zentral) Nachfrage (Haushalte)
+heat_low_central_demand_cts: Wärme (niedrig, zentral) Nachfrage (Gewerbe, Handel, Dienstleistungen)
+heat_low_central_demand_ind: Wärme (niedrig, zentral) Nachfrage (Industrie)
+heat_low_decentral-demand_hh: Wärme (niedrig, dezentral) Nachfrage (Haushalte)
+heat_low_decentral_demand_cts: Wärme (niedrig, dezentral) Nachfrage (Gewerbe, Handel, Dienstleistungen)
+heat_low_decentral_demand_ind: Wärme (niedrig, dezentral) Nachfrage (Industrie)
+
+# Wärme (mittel) Nachfragen
+heat_med-demand_ind: Wärme (mittel) Nachfrage (Industrie)
+
+# Wärme (hoch) Nachfragen
+heat_high-demand_ind: Wärme (hoch) Nachfrage (Industrie)
+
+# Importe
+import-electricity: Stromimport
+
+# Rohstoffe
+commodity_biomass_solid: Biomasse (fest)
+commodity_biomass_gas: Biogas
+commodity_residual_waste: Restmüll
+commodity-h2: Wasserstoff
+
+# Volatile
+electricity-wind: Wind (onshore)
+electricity-pv_ground: PV (Freifläche)
+electricity-pv_agri: PV (Agrarflächen)
+electricity-pv_rooftop: PV (Dachflächen)
+heat_low_decentral_solarthermal_plant: Solarkollektor (dezentral)
+heat_low_decentral_geothermal_plant: Geothermieanlage (dezentral)
+
+# Umwandlung
+biomass_solid_boiler_heat_med: Biomassekessel (fest, mittlere Wärme)
+biomass_solid_boiler_heat_high: Biomassekessel (fest, hohe Wärme)
+electricity_boiler_heat_med: Elektrokessel (mittlere Wärme)
+electricity_boiler_heat_high: Elektrokessel (hohe Wärme)
+h2_boiler_heat_med: Wasserstoffkessel (mittlere Wärme)
+h2_boiler_heat_high: Wasserstoffkessel (hohe Wärme)
+electricity_electrolyzer: Elektrolyseur
+
+# Wärmepumpen
+electricity-heatpump_heat_low_central: Wärmepumpe (niedrig, zentral)
+electricity-heatpump_heat_low_decentral: Wärmepumpe (niedrig, dezentral)
+electricity-heatpump_heat_med: Wärmepumpe (mittel)
+
+# Entnahme-KWK (Kraft-Wärme-Kopplung)
+biomass_solid_extchp_heat_low_decentral: Biomasse-KWK (fest, niedrig, dezentral)
+biomass_solid_extchp_heat_low_central: Biomasse-KWK (fest, niedrig, zentral)
+biomass_solid_extchp_heat_med: Biomasse-KWK (fest, mittel)
+biomass_solid_extchp_heat_high: Biomasse-KWK (fest, hoch)
+biomass_gas_extchp_heat_low_decentral: Biogas-KWK (niedrig, dezentral)
+biomass_gas_extchp_heat_low_central: Biogas-KWK (niedrig, zentral)
+biomass_gas_extchp_heat_med: Biogas-KWK (mittel)
+biomass_gas_extchp_heat_high: Biogas-KWK (hoch)
+h2_extchp_heat_high: Wasserstoff-KWK (hoch)
+residual_waste_extchp_heat_high: Restmüll-KWK (hoch)
+residual_waste_extchp_heat_low_central: Restmüll-KWK (niedrig, zentral)
+
+# Gegendruck-KWK
+biomass_solid_bpchp_heat_low_decentral: Biomasse-Gegendruck-KWK (fest, niedrig, dezentral)
+biomass_solid_bpchp_heat_low_central: Biomasse-Gegendruck-KWK (fest, niedrig, zentral)
+biomass_solid_bpchp_heat_med: Biomasse-Gegendruck-KWK (fest, mittel)
+biomass_gas_bpchp_heat_low_decentral: Biogas-Gegendruck-KWK (niedrig, dezentral)
+biomass_gas_bpchp_heat_low_central: Biogas-Gegendruck-KWK (niedrig, zentral)
+biomass_gas_bpchp_heat_med: Biogas-Gegendruck-KWK (mittel)
+
+# Speicher
+heat_low_decentral_storage: Wärmespeicher (niedrig, dezentral)
+electricity_storage_battery: Batteriespeicher (Strom)
+
+# Überschuss
+h2-export: Wasserstoffexport
