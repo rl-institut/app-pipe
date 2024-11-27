@@ -62,7 +62,7 @@ components:
   - electricity-pv_ground
   - electricity-pv_agri
   - electricity-pv_rooftop
-  -
+
   - heat_low_decentral_solarthermal_plant
   - heat_low_decentral_geothermal_plant
 
