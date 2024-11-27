@@ -13,83 +13,106 @@ links:
   - r120670124124-r120670201201
 
 busses:
-
+  # end usage energy busses
   - electricity
-  - heat_low_central
   - heat_low_decentral
+  - heat_low_central
   - heat_med
   - heat_high
 
+  # resource busses
+  - residual_waste
   - biomass_solid
   - biomass_gas
-  - ch4 # hydrogen
-  - waste
-#  - h2
+  - h2
 
 components:
-  - electricity-import
-  - electricity-export
-  - electricity-bev_charging
+  # electricty demands
   - electricity-demand_hh
   - electricity-demand_cts
+  - electricity-demand-mob
   - electricity-demand_ind
-#  - electricity-electrolyzer
-  - electricity-heatpump_central
-  - electricity-heatpump_decentral
-  - electricity-large_scale_battery
-  - electricity-small_scale_battery
-  - electricity-pth_central
-  - electricity-pth_decentral
 
-  - ch4-import
-  - ch4-transmission
-  - ch4-boiler_central
-  - ch4-boiler_decentral
-  - ch4-bpchp_central
-  - ch4-bpchp_decentral
-  - ch4-gt
-  - ch4-extchp_central
-  - ch4-extchp_decentral
+  # heat_low demands
+  - heat_low_central-demand_hh
+  - heat_low_central_demand_cts
+  - heat_low_central_demand_ind
 
-  - biomass-biogas_plant
-  - biomass-import
+  - heat_low_decentral-demand_hh
+  - heat_low_decentral_demand_cts
+  - heat_low_decentral_demand_ind
 
-  - biogas-bpchp_central
-  - biogas-bpchp_decentral
-  - biogas-biogas_upgrading_plant
+  # heat_med demands
+  - heat_med-demand_ind
 
-#  - h2-cavern
-#  - h2-demand
-#  - h2-excess
-#  - h2-bpchp_central
-#  - h2-bpchp_decentral
-#  - h2-gt
-#  - h2-extchp_central
-#  - h2-extchp_decentral
-#  - h2-import
-#  - h2-import
+  # heat_high demands
+  - heat_high-demand_ind
 
-  - wood-oven
-  - wood-extchp_central
-  - wood-extchp_decentral
-  - wood-import
+  # imports
+  - import-electricity
 
-  - lignite-import
-  - lignite-oven
+  # commodity
+  - commodity_biomass_solid
+  - commodity_biomass_gas
+  - commodity_residual_waste
+  - commodity-h2
 
-  - heat_central-demand_hh
-  - heat_central-demand_cts
-  - heat_central-demand_ind
-  - heat_central-storage
-  - heat_central-transmission
+  # volatile
+  - electricity-wind
+  - electricity-pv_ground
+  - electricity-pv_agri
+  - electricity-pv_rooftop
+  -
+  - heat_low_decentral_solarthermal_plant
+  - heat_low_decentral_geothermal_plant
 
-  - heat_decentral-demand_hh
-  - heat_decentral-demand_cts
-  - heat_decentral-demand_ind
-  - heat_decentral-storage
+  # conversion
+  - biomass_solid_boiler_heat_med
+  - biomass_solid_boiler_heat_high
+  - electricity_boiler_heat_med
+  - electricity_boiler_heat_high
+  - h2_boiler_heat_med
+  - h2_boiler_heat_high
+  - electricity_electrolyzer
 
-  - solar-pv_ground
-  - solar-pv_rooftop
-  - solar-thermalcollector_central
-  - solar-thermalcollector_decentral
-  - wind-onshore
+  # heatpumps
+  - electricity-heatpump_heat_low_central
+  - electricity-heatpump_heat_low_decentral
+  - electricity-heatpump_heat_med
+
+  # extraction KWK-Dampfturbine
+  - biomass_solid_extchp_heat_low_decentral
+  - biomass_solid_extchp_heat_low_central
+  - biomass_solid_extchp_heat_med
+  - biomass_solid_extchp_heat_high
+  - biomass_gas_extchp_heat_low_decentral
+  - biomass_gas_extchp_heat_low_central
+  - biomass_gas_extchp_heat_med
+  - biomass_gas_extchp_heat_high
+  - h2_extchp_heat_high
+  - residual_waste_extchp_heat_high
+  - residual_waste_extchp_heat_low_central
+
+  # backpressure
+  - biomass_solid_bpchp_heat_low_decentral
+  - biomass_solid_bpchp_heat_low_central
+  - biomass_solid_bpchp_heat_med
+  - biomass_gas_bpchp_heat_low_decentral
+  - biomass_gas_bpchp_heat_low_central
+  - biomass_gas_bpchp_heat_med
+
+  # reservoir
+  - heat_low_central_storage
+  - heat_low_decentral_storage
+
+  # storage
+  - electricity_storage_battery
+
+  # excess
+  - h2-export
+
+  # transmission
+  #- ch4-transmission
+  #- electricty-tranmission
+  #- heat_low_central-transmission
+
