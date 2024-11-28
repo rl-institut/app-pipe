@@ -309,7 +309,7 @@ electricity-heatpump_heat_low_central:
   foreign_keys:
     from_bus: electricity
     to_bus: heat_low_central
-    efficiency: heatpump_heat_low_central-profile
+    efficiency: electricity-heatpump_heat_low_central-profile
   defaults:
     output_parameters: "{}"
 
@@ -320,7 +320,7 @@ electricity-heatpump_heat_low_decentral:
   foreign_keys:
     from_bus: electricity
     to_bus: heat_low_decentral
-    efficiency: heatpump_heat_low_decentral-profile
+    efficiency: electricity-heatpump_heat_low_decentral-profile
   defaults:
     output_parameters: "{}"
 
@@ -331,7 +331,7 @@ electricity-heatpump_heat_med:
   foreign_keys:
     from_bus: electricity
     to_bus: heat_med
-    efficiency: heatpump_heat_med-profile
+    efficiency: electricity-heatpump_heat_med-profile
   defaults:
     output_parameters: "{}"
 
@@ -539,7 +539,16 @@ h2-export:
   defaults:
     input_parameters: "{}"
 
-
+#######################################################
+# Dummys for testing the ESM
+electricity-export:
+  carrier: electricity
+  tech: export
+  type: excess
+  foreign_keys:
+    bus: h2
+  defaults:
+    input_parameters: "{}"
 
 #######################################################
 # transmission
