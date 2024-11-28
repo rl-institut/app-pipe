@@ -101,12 +101,10 @@ components:
   - biomass_gas_bpchp_heat_low_central
   - biomass_gas_bpchp_heat_med
 
-  # reservoir
-  - heat_low_central_storage
-  - heat_low_decentral_storage
-
   # storage
   - electricity_storage_battery
+  - heat_low_central_storage
+  - heat_low_decentral_storage
 
   # excess
   - h2-export

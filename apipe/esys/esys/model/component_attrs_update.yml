@@ -495,11 +495,12 @@ biomass_gas_bpchp_heat_med:
     heat_bus: heat_med
 
 #######################################################
-# reservoir
+# storage
+
 heat_low_central_storage:
   carrier: heat_low_central
   tech: storage
-  type: reservoir
+  type: storage
   foreign_keys:
     bus: heat_low_central
   defaults:
@@ -509,22 +510,9 @@ heat_low_central_storage:
 heat_low_decentral_storage:
   carrier: heat_low_decentral
   tech: storage
-  type: reservoir
-  foreign_keys:
-    bus: heat_low_decentral
-  defaults:
-    input_parameters: "{}"
-    output_parameters: "{}"
-
-#######################################################
-# storage
-
-electricity-storage_battery:
-  carrier: electricity
-  tech: storage_battery
   type: storage
   foreign_keys:
-    bus: electricity
+    bus: heat_low_decentral
   defaults:
     input_parameters: "{}"
     output_parameters: "{}"
@@ -540,6 +528,8 @@ h2-export:
     bus: h2
   defaults:
     input_parameters: "{}"
+
+
 
 #######################################################
 # transmission
