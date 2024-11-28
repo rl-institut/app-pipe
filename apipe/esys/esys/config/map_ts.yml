@@ -1,3 +1,4 @@
+
 load: {
   "electricity-demand_hh-profile": {
       "dataset": "demand_electricity_region",
@@ -7,69 +8,85 @@ load: {
     "dataset": "demand_electricity_region",
     "file": "demand_cts_power_timeseries.csv",
   },
+  "electricity-demand_mob-profile": {
+    "dataset": "renewable_feedin",
+    "file": "pv_feedin_timeseries.csv",
+  },
   "electricity-demand_ind-profile": {
     "dataset": "demand_electricity_region",
     "file": "demand_ind_power_timeseries.csv",
   },
-  "heat_central-demand_hh-profile": {
+  "heat_low_central-demand_hh-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_hh_heat_timeseries.csv",
   },
-  "heat_central-demand_cts-profile": {
+  "heat_low_central_demand_cts-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_cts_heat_timeseries.csv",
   },
-  "heat_central-demand_ind-profile": {
+  "heat_low_central_demand_ind-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_ind_heat_timeseries.csv",
   },
-  "heat_decentral-demand_hh-profile": {
+  "heat_low_decentral-demand_hh-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_hh_heat_timeseries.csv",
   },
-  "heat_decentral-demand_cts-profile": {
+  "heat_low_decentral-demand_cts-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_cts_heat_timeseries.csv",
   },
-  "heat_decentral-demand_ind-profile": {
+  "heat_low_decentral-demand_ind-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_ind_heat_timeseries.csv",
   },
+  "heat_med-demand_ind-profile": {
+    "dataset": "demand_heat_region",
+    "file": "demand_ind_heat_timeseries.csv",
+  },
+  "heat_high-demand_ind-profile": {
+    "dataset": "demand_heat_region",
+    "file": "demand_ind_heat_timeseries.csv",
+  }
 }
 
 feedin: {
-  "hydro-ror-profile": {
-    "dataset": "renewable_feedin",
-    "file": "ror_feedin_timeseries.csv",
-  },
-  "wind-onshore-profile": {
+  "electricity-wind-profile": {
     "dataset": "renewable_feedin",
     "file": "wind_feedin_timeseries.csv",
   },
-  "solar-pv_ground-profile": {
+  "electricity-pv_ground-profile": {
     "dataset": "renewable_feedin",
     "file": "pv_feedin_timeseries.csv",
   },
-  "solar-pv_rooftop-profile": {
+  "electricity-pv_agri-profile": {
     "dataset": "renewable_feedin",
     "file": "pv_feedin_timeseries.csv",
   },
-  "electricity-bev_charging-profile": {
+  "electricity-pv_rooftop-profile": {
     "dataset": "renewable_feedin",
     "file": "pv_feedin_timeseries.csv",
   },
-  "solar-thermalcollector_central-profile": {
+  heat_low_decentral_solarthermal_plant-profile": {
     "dataset": "renewable_feedin",
     "file": "st_feedin_timeseries.csv",
   },
-  "solar-thermalcollector_decentral-profile": {
+  "heat_low_decentral_geothermal_plant-profile": {
     "dataset": "renewable_feedin",
-    "file": "st_feedin_timeseries.csv",
+    "file": "gt_feedin_timeseries.csv",
   },
 }
 
 efficiencies: {
-  "efficiency-profile": {
+  "electricity-heatpump_heat_low_central-profile": {
+    "dataset": "heatpump_cop",
+    "file": "heatpump_cop_timeseries.csv",
+  },
+  "electricity-heatpump_heat_low_decentral-profile": {
+    "dataset": "heatpump_cop",
+    "file": "heatpump_cop_timeseries.csv",
+  },
+  "electricity-heatpump_heat_med-profile": {
     "dataset": "heatpump_cop",
     "file": "heatpump_cop_timeseries.csv",
   },
