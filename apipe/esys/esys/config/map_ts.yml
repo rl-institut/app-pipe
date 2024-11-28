@@ -20,11 +20,11 @@ load: {
     "dataset": "demand_heat_region",
     "file": "demand_hh_heat_timeseries.csv",
   },
-  "heat_low_central_demand_cts-profile": {
+  "heat_low_central-demand_cts-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_cts_heat_timeseries.csv",
   },
-  "heat_low_central_demand_ind-profile": {
+  "heat_low_central-demand_ind-profile": {
     "dataset": "demand_heat_region",
     "file": "demand_ind_heat_timeseries.csv",
   },
@@ -73,7 +73,7 @@ feedin: {
   },
   "heat_low_decentral_geothermal_plant-profile": {
     "dataset": "renewable_feedin",
-    "file": "gt_feedin_timeseries.csv",
+    "file": "st_feedin_timeseries.csv",
   },
 }
 

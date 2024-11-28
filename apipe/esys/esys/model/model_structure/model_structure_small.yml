@@ -1,0 +1,115 @@
+regions:
+  - r120640428428
+  - r120640472472
+  - r120670124124
+  - r120670201201
+
+links:
+  - r120640428428-r120640472472
+  - r120640428428-r120670124124
+  - r120640428428-r120670201201
+  - r120640472472-r120670124124
+  - r120640472472-r120670201201
+  - r120670124124-r120670201201
+
+busses:
+  # end usage energy busses
+  - electricity
+  - heat_low_decentral
+  - heat_low_central
+  - heat_med
+  - heat_high
+
+  # resource busses
+  - residual_waste
+  - biomass_solid
+  - biomass_gas
+  - h2
+
+components:
+  # electricty demands
+  - electricity-demand_hh
+  - electricity-demand_cts
+  - electricity-demand_mob
+  - electricity-demand_ind
+
+  # heat_low demands
+  - heat_low_central-demand_hh
+  - heat_low_central-demand_cts
+  - heat_low_central-demand_ind
+
+  - heat_low_decentral-demand_hh
+  - heat_low_decentral-demand_cts
+  - heat_low_decentral-demand_ind
+
+  # heat_med demands
+  - heat_med-demand_ind
+
+  # heat_high demands
+  - heat_high-demand_ind
+
+  # imports
+  - electricity-import
+
+  # commodity
+  - commodity-biomass_solid
+  - commodity-biomass_gas
+  - commodity-residual_waste
+  - commodity-h2
+
+  # volatile
+  - electricity-wind
+  - electricity-pv_ground
+  - electricity-pv_agri
+  - electricity-pv_rooftop
+
+  - heat_low_decentral-solarthermal_plant
+  - heat_low_decentral-geothermal_plant
+
+  # conversion
+  - biomass_solid-boiler-heat_med
+  - biomass_solid-boiler-heat_high
+  - electricity-boiler-heat_med
+  - electricity-boiler-heat_high
+  - h2-boiler-heat_med
+  - h2-boiler-heat_high
+  - electricity-electrolyzer
+
+  # heatpumps
+  - electricity-heatpump_heat_low_central
+  - electricity-heatpump_heat_low_decentral
+  - electricity-heatpump_heat_med
+
+  # extraction KWK-Dampfturbine
+  - biomass_solid-extchp_heat_low_decentral
+  - biomass_solid-extchp_heat_low_central
+  - biomass_solid-extchp_heat_med
+  - biomass_solid-extchp_heat_high
+  - biomass_gas-extchp_heat_low_decentral
+  - biomass_gas-extchp_heat_low_central
+  - biomass_gas-extchp_heat_med
+  - biomass_gas-extchp_heat_high
+  - h2-extchp_heat_high
+  - residual_waste-extchp_heat_high
+  - residual_waste-extchp_heat_low_central
+
+  # backpressure
+  - biomass_solid_bpchp_heat_low_decentral
+  - biomass_solid_bpchp_heat_low_central
+  - biomass_solid_bpchp_heat_med
+  - biomass_gas_bpchp_heat_low_decentral
+  - biomass_gas_bpchp_heat_low_central
+  - biomass_gas_bpchp_heat_med
+
+  # storage
+  - electricity-battery_storage
+  - heat_low_central-storage
+  - heat_low_decentral-storage
+
+  # excess
+  - h2-export
+
+  # transmission
+  #- h2-transmission
+  #- electricty-tranmission
+  #- heat_low_central-transmission
