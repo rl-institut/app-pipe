@@ -296,6 +296,13 @@ if __name__ == "__main__":
             "efficiency", component_attrs_update
         )
 
+        # Drop the ones that are not listed in model_structure
+        foreign_keys_efficiency = [
+            fk
+            for fk in foreign_keys_efficiency
+            if fk["efficiency"].split("-profile")[0]
+            in model_structure["components"]
+        ]
         # Save profile names depending on whether it is a load, a feed-in or an
         # efficiency
         load_names = [
