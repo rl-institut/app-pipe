@@ -67,12 +67,12 @@ components:
   - heat_low_decentral-geothermal_plant
 
   # conversion
-  - biomass_solid-boiler-heat_med
-  - biomass_solid-boiler-heat_high
-  - electricity-boiler-heat_med
-  - electricity-boiler-heat_high
-  - h2-boiler-heat_med
-  - h2-boiler-heat_high
+  - biomass_solid-boiler_heat_med
+  - biomass_solid-boiler_heat_high
+  - electricity-boiler_heat_med
+  - electricity-boiler_heat_high
+  - h2-boiler_heat_med
+  - h2-boiler_heat_high
   - electricity-electrolyzer
 
   # heatpumps
@@ -94,12 +94,12 @@ components:
   - residual_waste-extchp_heat_low_central
 
   # backpressure
-  - biomass_solid_bpchp_heat_low_decentral
-  - biomass_solid_bpchp_heat_low_central
-  - biomass_solid_bpchp_heat_med
-  - biomass_gas_bpchp_heat_low_decentral
-  - biomass_gas_bpchp_heat_low_central
-  - biomass_gas_bpchp_heat_med
+  - biomass_solid-bpchp_heat_low_decentral
+  - biomass_solid-bpchp_heat_low_central
+  - biomass_solid-bpchp_heat_med
+  - biomass_gas-bpchp_heat_low_decentral
+  - biomass_gas-bpchp_heat_low_central
+  - biomass_gas-bpchp_heat_med
 
   # storage
   - electricity-battery_storage
