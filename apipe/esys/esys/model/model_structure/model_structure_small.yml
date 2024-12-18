@@ -76,7 +76,7 @@ components:
 #  - electricity-electrolyzer
 
   # heatpumps
-  - electricity-heatpump_heat_low_central
+  - electricity-heatpump_central
 #  - electricity-heatpump_heat_low_decentral
 #  - electricity-heatpump_heat_med
 

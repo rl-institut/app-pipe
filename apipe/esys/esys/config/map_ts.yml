@@ -78,15 +78,7 @@ feedin: {
 }
 
 efficiencies: {
-  "electricity-heatpump_heat_low_central-profile": {
-    "dataset": "heatpump_cop",
-    "file": "heatpump_cop_timeseries.csv",
-  },
-  "electricity-heatpump_heat_low_decentral-profile": {
-    "dataset": "heatpump_cop",
-    "file": "heatpump_cop_timeseries.csv",
-  },
-  "electricity-heatpump_heat_med-profile": {
+  "electricity-heatpump_central-profile": {
     "dataset": "heatpump_cop",
     "file": "heatpump_cop_timeseries.csv",
   },
