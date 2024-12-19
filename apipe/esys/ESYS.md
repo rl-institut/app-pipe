@@ -1,4 +1,4 @@
-# Energy system in digiplan
+# Energy system Stadt-Land-Energie
 
 The energy system in apipe is created using
 [oemof-B3](https://github.com/rl-institut/oemof-B3).
@@ -61,4 +61,42 @@ INFO - Optimization successful...
 INFO - Solved the model. Elapsed time: 0:00:00.291995
 INFO - Model solved. Collecting results.
 INFO - Results saved to store/appdata/esys/2045_scenario/optimized.
+```
+
+## FAQ
+### Do default scalars defined in `write_default_scalars.yml` overwrite
+`raw/technology_data/raw_cost_efficiencies.csv`?
+
+Yes they do.
+To change this. You can either:
+
+1) Run once
+
+```
+snakemake -j1 make_esys_appdata
+```
+2) Navigate to `store/datasets/esys_raw/scalars`
+
+```
+cd store/datasets/esys_raw/scalars
+```
+
+3) Change the value in the file `default_scalars.csv`.
+
+4) Run again:
+```
+snakemake -j1 make_esys_appdata
+```
+
+Alternatively:
+1) Navigate to `store/raw/technology_data/raw_cost_efficiencies.csv`
+```
+cd store/raw/technology_data/raw_cost_efficiencies.csv
+```
+2) Update the values for those scalars you'd like to change
+3) Delete the respective var_names from `write_default_scalars` within `write_default_scalars.yml`
+4) Add var_names to `cost_efficiencies` within `write_default_scalars.yml`
+5) Run
+```
+snakemake -j1 make_esys_appdata
 ```
