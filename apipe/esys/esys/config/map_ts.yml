@@ -59,7 +59,11 @@ feedin: {
     "dataset": "renewable_feedin",
     "file": "pv_feedin_timeseries.csv",
   },
-  "electricity-pv_agri-profile": {
+  "electricity-pv_agri_horizontal-profile": {
+    "dataset": "renewable_feedin",
+    "file": "pv_feedin_timeseries.csv",
+  },
+  "electricity-pv_agri_vertical-profile": {
     "dataset": "renewable_feedin",
     "file": "pv_feedin_timeseries.csv",
   },

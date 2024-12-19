@@ -183,13 +183,24 @@ electricity-pv_ground:
     marginal_cost: 0
     output_parameters: "{}"
 
-electricity-pv_agri:
+electricity-pv_agri_horizontal:
   carrier: electricity
-  tech: pv_agri
+  tech: pv_agri_horizontal
   type: volatile
   foreign_keys:
     bus: electricity
-    profile: electricity-pv_agri-profile
+    profile: electricity-pv_agri_horizontal-profile
+  defaults:
+    marginal_cost: 0
+    output_parameters: "{}"
+
+electricity-pv_agri_vertical:
+  carrier: electricity
+  tech: pv_agri_vertical
+  type: volatile
+  foreign_keys:
+    bus: electricity
+    profile: electricity-pv_agri_vertical-profile
   defaults:
     marginal_cost: 0
     output_parameters: "{}"

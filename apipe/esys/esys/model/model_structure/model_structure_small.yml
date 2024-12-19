@@ -60,7 +60,8 @@ components:
   # volatile
   - electricity-wind
   - electricity-pv_ground
-  - electricity-pv_agri
+  - electricity-pv_agri_horizontal
+  - electricity-pv_agri_vertical
   - electricity-pv_rooftop
 
 #  - heat_low_decentral-solarthermal_plant
