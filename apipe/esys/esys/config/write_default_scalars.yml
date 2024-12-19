@@ -165,5 +165,6 @@ costs_efficiencies: [
     "storage_capacity_cost_overnight",
     "storage_fixom_cost",
     "thermal_efficiency",
-    "wacc"
+    "wacc",
+    #"amount",
   ]
