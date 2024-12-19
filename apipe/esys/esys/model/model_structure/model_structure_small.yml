@@ -15,7 +15,7 @@ links:
 busses:
   # end usage energy busses
   - electricity
-#  - heat_low_decentral
+  - heat_low_decentral
   - heat_low_central
 #  - heat_med
 #  - heat_high
@@ -38,9 +38,9 @@ components:
   - heat_low_central-demand_cts
   - heat_low_central-demand_ind
 
-#  - heat_low_decentral-demand_hh
-#  - heat_low_decentral-demand_cts
-#  - heat_low_decentral-demand_ind
+  - heat_low_decentral-demand_hh
+  - heat_low_decentral-demand_cts
+  - heat_low_decentral-demand_ind
 
   # heat_med demands
 #  - heat_med-demand_ind
@@ -64,7 +64,7 @@ components:
   - electricity-pv_agri_vertical
   - electricity-pv_rooftop
 
-#  - heat_low_decentral-solarthermal_plant
+  - heat_low_decentral-solarthermal_plant
 #  - heat_low_decentral-geothermal_plant
 
   # conversion

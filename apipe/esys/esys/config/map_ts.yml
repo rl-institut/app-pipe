@@ -71,11 +71,11 @@ feedin: {
     "dataset": "renewable_feedin",
     "file": "pv_feedin_timeseries.csv",
   },
-  heat_low_decentral_solarthermal_plant-profile": {
+  "heat_low_decentral-solarthermal_plant-profile": {
     "dataset": "renewable_feedin",
     "file": "st_feedin_timeseries.csv",
   },
-  "heat_low_decentral_geothermal_plant-profile": {
+  "heat_low_decentral-geothermal_plant-profile": {
     "dataset": "renewable_feedin",
     "file": "st_feedin_timeseries.csv",
   },

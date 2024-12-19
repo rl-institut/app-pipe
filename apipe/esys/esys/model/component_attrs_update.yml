@@ -218,11 +218,11 @@ electricity-pv_rooftop:
 
 heat_low_decentral-solarthermal_plant:
   carrier: heat_low_decentral
-  tech: solarthermalplant_decentral
+  tech: solarthermal_plant
   type: volatile
   foreign_keys:
     bus: heat_low_decentral
-    profile: heat_low_decentral_solarthermal_plant-profile
+    profile: heat_low_decentral-solarthermal_plant-profile
   defaults:
     marginal_cost: 0
     output_parameters: "{}"
