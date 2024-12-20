@@ -53,6 +53,7 @@ rasterio = "^1.3.6"
 jinja2 = "3.0.3"
 geopy = "^2.3.0"
 oemoflex = {git = "https://github.com/rl-institut/oemoflex.git", rev = "0.0.3"}
+oemof_visio= {git = "https://github.com/Bachibouzouk/oemof-visio.git", branch="oemofdevmeeting"}
 ruff = "^0.0.257"
 types-pyyaml = "^6.0.12.9"
 pyxlsb = "^1.0.10"
