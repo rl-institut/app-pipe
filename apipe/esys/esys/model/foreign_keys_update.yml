@@ -63,7 +63,7 @@
     'h2-boiler_heat_high',
     'electricity-electrolyzer',
     'electricity-heatpump_central',
-    'electricity-heatpump_heat_low_decentral',
+    'electricity-heatpump_decentral',
     'electricity-heatpump_heat_med',
     #'h2-transmission',
     #'electricty-tranmission'
@@ -93,6 +93,6 @@
 'efficiency': [
   #heatpumps
     'electricity-heatpump_central',
-    'electricity-heatpump_heat_low_decentral',
+    'electricity-heatpump_decentral',
     'electricity-heatpump_heat_med',
 ]

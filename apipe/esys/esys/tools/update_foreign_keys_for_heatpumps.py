@@ -53,8 +53,7 @@ datapackage_path = scenario_path / "datapackage.json"
 
 updates_dict = {
     "data/elements/electricity-heatpump_central.csv": "electricity-heatpump_central_profile",
-    # "data/elements/electricity-heatpump_decentral.csv":
-    # "electricity-heatpump_decentral_profile",
+    "data/elements/electricity-heatpump_decentral.csv": "electricity-heatpump_decentral_profile",
     # "data/elements/electricity-heatpump_med.csv":
     # "electricity-heatpump_med_profile",
 }

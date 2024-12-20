@@ -324,14 +324,14 @@ electricity-heatpump_central:
   defaults:
     output_parameters: "{}"
 
-electricity-heatpump_heat_low_decentral:
+electricity-heatpump_decentral:
   carrier: electricity
-  tech: heatpump_heat_low_decentral
+  tech: heatpump_decentral
   type: conversion
   foreign_keys:
     from_bus: electricity
     to_bus: heat_low_decentral
-    efficiency: electricity-heatpump_central-profile
+    efficiency: electricity-heatpump_decentral-profile
   defaults:
     output_parameters: "{}"
 

@@ -78,7 +78,7 @@ components:
 
   # heatpumps
   - electricity-heatpump_central
-#  - electricity-heatpump_heat_low_decentral
+  - electricity-heatpump_decentral
 #  - electricity-heatpump_heat_med
 
   # extraction KWK-Dampfturbine
