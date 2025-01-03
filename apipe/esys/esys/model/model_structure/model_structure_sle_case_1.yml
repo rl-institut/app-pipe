@@ -52,10 +52,10 @@ components:
   - electricity-import
 
   # commodity
-  - commodity-biomass_solid
-  - commodity-biomass_gas
-  - commodity-residual_waste
-  - commodity-h2
+  - biomass_solid-commodity
+  - biomass_gas-commodity
+  - residual_waste-commodity
+  - commodity_h2
 
   # volatile
   - electricity-wind
@@ -65,7 +65,7 @@ components:
   - electricity-pv_rooftop
 
   - heat_low_decentral-solarthermal_plant
-  - heat_low_decentral-geothermal_plant
+#  - heat_low_decentral-geothermal_plant
 
   # conversion
   - biomass_solid-boiler_heat_med
@@ -78,7 +78,7 @@ components:
 
   # heatpumps
   - electricity-heatpump_central
-  - electricity-heatpump_heat_low_decentral
+  - electricity-heatpump_decentral
   - electricity-heatpump_heat_med
 
   # extraction KWK-Dampfturbine
