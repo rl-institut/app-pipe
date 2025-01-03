@@ -70,7 +70,7 @@ components:
   # conversion
   - biomass_solid-boiler_heat_med
 #  - biomass_solid-boiler-heat_high
-#  - electricity-boiler-heat_med
+  - electricity-boiler_heat_med
 #  - electricity-boiler-heat_high
 #  - h2-boiler-heat_med
 #  - h2-boiler-heat_high
