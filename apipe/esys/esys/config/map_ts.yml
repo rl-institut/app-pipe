@@ -90,4 +90,8 @@ efficiencies: {
     "dataset": "heatpump_cop",
     "file": "heatpump_cop_timeseries.csv",
   },
+  "electricity-heatpump_heat_med-profile": {
+    "dataset": "heatpump_cop",
+    "file": "heatpump_cop_timeseries.csv",
+  },
 }

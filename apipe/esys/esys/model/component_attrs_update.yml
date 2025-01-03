@@ -342,7 +342,7 @@ electricity-heatpump_heat_med:
   foreign_keys:
     from_bus: electricity
     to_bus: heat_med
-    efficiency: electricity-heatpump_central-profile
+    efficiency: electricity-heatpump_heat_med-profile
   defaults:
     output_parameters: "{}"
 
