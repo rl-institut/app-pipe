@@ -16,7 +16,7 @@
     'biomass_solid-commodity',
     'biomass_gas-commodity',
     'residual_waste-commodity',
-    'commodity-h2',
+    'h2-commodity',
     'electricity-wind',
     'electricity-pv_ground',
     'electricity-pv_agri_horizontal',

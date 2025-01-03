@@ -24,7 +24,7 @@ busses:
   - residual_waste
   - biomass_solid
   - biomass_gas
-#  - h2
+  - h2
 
 components:
   # electricty demands
@@ -55,7 +55,7 @@ components:
   - biomass_solid-commodity
   - biomass_gas-commodity
   - residual_waste-commodity
-#  - commodity_h2
+  - h2-commodity
 
   # volatile
   - electricity-wind
@@ -72,7 +72,7 @@ components:
 #  - biomass_solid-boiler-heat_high
   - electricity-boiler_heat_med
 #  - electricity-boiler-heat_high
-#  - h2-boiler-heat_med
+  - h2-boiler_heat_med
 #  - h2-boiler-heat_high
 #  - electricity-electrolyzer
 

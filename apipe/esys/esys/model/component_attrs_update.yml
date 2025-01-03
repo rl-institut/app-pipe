@@ -150,7 +150,7 @@ residual_waste-commodity:
   defaults:
     output_parameters: "{}"
 
-commodity-h2:
+h2-commodity:
   carrier: h2
   tech: commodity
   type: shortage
