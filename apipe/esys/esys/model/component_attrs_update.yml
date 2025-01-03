@@ -123,7 +123,7 @@ electricity-import:
 #######################################################
 # commodity
 
-commodity-biomass_solid:
+biomass_solid-commodity:
   carrier: biomass_solid
   tech: commodity
   type: shortage

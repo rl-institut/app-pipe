@@ -13,7 +13,7 @@
     'heat_med-demand_ind',
     'heat_high-demand_ind',
     'electricity-import',
-    'commodity-biomass_solid',
+    'biomass_solid-commodity',
     'commodity-biomass_gas',
     'commodity-residual_waste',
     'commodity-h2',
