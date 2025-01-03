@@ -68,7 +68,7 @@ components:
 #  - heat_low_decentral-geothermal_plant
 
   # conversion
-#  - biomass_solid-boiler-heat_med
+  - biomass_solid-boiler_heat_med
 #  - biomass_solid-boiler-heat_high
 #  - electricity-boiler-heat_med
 #  - electricity-boiler-heat_high
