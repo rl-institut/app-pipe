@@ -21,7 +21,7 @@ busses:
 #  - heat_high
 
   # resource busses
-#  - residual_waste
+  - residual_waste
   - biomass_solid
   - biomass_gas
 #  - h2
@@ -54,7 +54,7 @@ components:
   # commodity
   - biomass_solid-commodity
   - biomass_gas-commodity
-#  - commodity_residual_waste
+  - residual_waste-commodity
 #  - commodity_h2
 
   # volatile
@@ -92,7 +92,7 @@ components:
 #  - biomass_gas-extchp_heat_high
 #  - h2-extchp_heat_high
 #  - residual_waste-extchp_heat_high
-#  - residual_waste-extchp_heat_low_central
+  - residual_waste-extchp_heat_low_central
 
   # backpressure
   - biomass_solid-bpchp_heat_low_decentral

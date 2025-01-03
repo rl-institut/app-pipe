@@ -141,7 +141,7 @@ biomass_gas-commodity:
   defaults:
     output_parameters: "{}"
 
-commodity-residual_waste:
+residual_waste-commodity:
   carrier: residual_waste
   tech: commodity
   type: shortage
