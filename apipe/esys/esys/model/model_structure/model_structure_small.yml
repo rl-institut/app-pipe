@@ -23,7 +23,7 @@ busses:
   # resource busses
 #  - residual_waste
   - biomass_solid
-#  - biomass_gas
+  - biomass_gas
 #  - h2
 
 components:
@@ -53,7 +53,7 @@ components:
 
   # commodity
   - biomass_solid-commodity
-#  - commodity_biomass_gas
+  - biomass_gas-commodity
 #  - commodity_residual_waste
 #  - commodity_h2
 
@@ -86,8 +86,8 @@ components:
   - biomass_solid-extchp_heat_low_central
 #  - biomass_solid-extchp_heat_med
 #  - biomass_solid-extchp_heat_high
-#  - biomass_gas-extchp_heat_low_decentral
-#  - biomass_gas-extchp_heat_low_central
+  - biomass_gas-extchp_heat_low_decentral
+  - biomass_gas-extchp_heat_low_central
 #  - biomass_gas-extchp_heat_med
 #  - biomass_gas-extchp_heat_high
 #  - h2-extchp_heat_high
@@ -98,8 +98,8 @@ components:
   - biomass_solid-bpchp_heat_low_decentral
   - biomass_solid-bpchp_heat_low_central
 #  - biomass_solid-bpchp_heat_med
-#  - biomass_gas-bpchp_heat_low_decentral
-#  - biomass_gas-bpchp_heat_low_central
+  - biomass_gas-bpchp_heat_low_decentral
+  - biomass_gas-bpchp_heat_low_central
 #  - biomass_gas-bpchp_heat_med
 
   # storage

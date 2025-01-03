@@ -132,7 +132,7 @@ biomass_solid-commodity:
   defaults:
     output_parameters: "{}"
 
-commodity-biomass_gas:
+biomass_gas-commodity:
   carrier: biomass_gas
   tech: commodity
   type: shortage
