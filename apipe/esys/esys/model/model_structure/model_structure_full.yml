@@ -18,7 +18,7 @@ busses:
   - heat_low_decentral
   - heat_low_central
   - heat_med
-#  - heat_high
+  - heat_high
 
   # resource busses
   - residual_waste
@@ -46,7 +46,7 @@ components:
   - heat_med-demand_ind
 
   # heat_high demands
-#  - heat_high-demand_ind
+  - heat_high-demand_ind
 
   # imports
   - electricity-import
@@ -69,11 +69,11 @@ components:
 
   # conversion
   - biomass_solid-boiler_heat_med
-#  - biomass_solid-boiler-heat_high
+  - biomass_solid-boiler_heat_high
   - electricity-boiler_heat_med
-#  - electricity-boiler-heat_high
+  - electricity-boiler_heat_high
   - h2-boiler_heat_med
-#  - h2-boiler-heat_high
+  - h2-boiler_heat_high
 #  - electricity-electrolyzer
 
   # heatpumps
