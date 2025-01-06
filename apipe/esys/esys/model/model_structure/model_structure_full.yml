@@ -1,16 +1,16 @@
 regions:
   - r120640428428
-#  - r120640472472
-#  - r120670124124
-#  - r120670201201
+  - r120640472472
+  - r120670124124
+  - r120670201201
 
 links:
-#  - r120640428428-r120640472472
-#  - r120640428428-r120670124124
-#  - r120640428428-r120670201201
-#  - r120640472472-r120670124124
-#  - r120640472472-r120670201201
-#  - r120670124124-r120670201201
+  - r120640428428-r120640472472
+  - r120640428428-r120670124124
+  - r120640428428-r120670201201
+  - r120640472472-r120670124124
+  - r120640472472-r120670201201
+  - r120670124124-r120670201201
 
 busses:
   # end usage energy busses
@@ -114,6 +114,6 @@ components:
   - electricity-export
 
   # transmission
-  #- h2-transmission
-  #- electricty-tranmission
-  #- heat_low_central-transmission
+  - h2-transmission
+  - electricity-transmission
+  - heat_low_central-transmission

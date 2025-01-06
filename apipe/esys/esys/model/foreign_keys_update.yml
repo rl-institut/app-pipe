@@ -65,9 +65,9 @@
     'electricity-heatpump_central',
     'electricity-heatpump_decentral',
     'electricity-heatpump_heat_med',
-    #'h2-transmission',
-    #'electricty-tranmission'
-    #'heat_low_central-transmission',
+    'h2-transmission',
+    'electricity-transmission',
+    'heat_low_central-transmission',
 ]
 
 'chp': [

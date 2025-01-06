@@ -564,27 +564,27 @@ electricity-export:
 #######################################################
 # transmission
 #######################################################
-#TODO: uncomment when adding links to model
-#h2-transmission:
-#  carrier: h2
-#  tech: transmission
-#  type: link
-#  foreign_keys:
-#    from_bus: h2
-#    to_bus: h2
-#
-#electricity-transmission:
-#  carrier: electricity
-#  tech: transmission
-#  type: link
-#  foreign_keys:
-#    from_bus: electricity
-#    to_bus: electricity
-#
-#heat_low_central_transmission:
-#  carrier: heat_low_central
-#  tech: transmission
-#  type: link
-#  foreign_keys:
-#    from_bus: heat_low_central
-#    to_bus: heat_low_central
+
+h2-transmission:
+  carrier: h2
+  tech: transmission
+  type: link
+  foreign_keys:
+    from_bus: h2
+    to_bus: h2
+
+electricity-transmission:
+  carrier: electricity
+  tech: transmission
+  type: link
+  foreign_keys:
+    from_bus: electricity
+    to_bus: electricity
+
+heat_low_central-transmission:
+  carrier: heat_low_central
+  tech: transmission
+  type: link
+  foreign_keys:
+    from_bus: heat_low_central
+    to_bus: heat_low_central
