@@ -108,7 +108,7 @@ components:
   - heat_low_decentral-storage
 
   # excess
-#  - h2-export
+  - h2-export
 
   # Dummys for model development
   - electricity-export
