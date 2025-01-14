@@ -10,12 +10,12 @@ DATASET_PATH = get_abs_dataset_path("preprocessed", "bnetza_mastr")
 
 rule create:
     input:
-        get_abs_dataset_path("raw", "bnetza_mastr") / "data" / "bnetza_open_mastr_2024-01-08.zip"
+        get_abs_dataset_path("raw", "bnetza_mastr") / "data" / "bnetza_open_mastr_2024-11-27.zip"
     output:
         files=[DATASET_PATH / "data" / f for f in config["files_extract"]]
     params:
         outpath=DATASET_PATH / "data",
-        files_extract=" ".join([f"bnetza_open_mastr_2024-01-08/{f}" for f in config["files_extract"]])
+        files_extract=" ".join([f"bnetza_open_mastr_2024-11-27/{f}" for f in config["files_extract"]])
     shell:
         """
         unzip -j {input} {params.files_extract} -d {params.outpath}

@@ -286,6 +286,7 @@ rule create_wind_units:
                 retain_rename_overlay_columns={"id": "municipality_id"},
             )
             all_units.append(units.copy().assign(status=status))
+            units.commissioning_date = units.commissioning_date.astype(str)
             write_geofile(
                 gdf=units,
                 file=file_out

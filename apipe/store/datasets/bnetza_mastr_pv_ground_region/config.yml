@@ -29,7 +29,6 @@ attributes:
    "Leistungsbegrenzung": "power_limitation",
    "ArtDerFlaeche": "area_type",
    "InAnspruchGenommeneFlaeche": "area_occupied",
-   "InAnspruchGenommeneAckerflaeche": "agricultural_area_occupied",
    "Buergerenergie": "citizens_unit",
    "MieterstromZugeordnet": "landlord_to_tenant_electricity",
    "NetzbetreiberpruefungStatus": "validated_by_system_operator"}
