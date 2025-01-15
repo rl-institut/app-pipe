@@ -102,6 +102,11 @@ module dbfz_biomass_capacity_rel:
     config: config["store"]["preprocessed"]["dbfz_biomass_capacity_rel"]
 use rule * from dbfz_biomass_capacity_rel as preprocessed_dbfz_biomass_capacity_rel_ *
 
+module wfbb_heat_atlas_bb:
+    snakefile: "wfbb_heat_atlas_bb/create.smk"
+    config: config["store"]["preprocessed"]["wfbb_heat_atlas_bb"]
+use rule * from wfbb_heat_atlas_bb as preprocessed_wfbb_heat_atlas_bb_*
+
 module oei_agri_pv:
     snakefile: "oei_agri_pv/create.smk"
     config: config["store"]["preprocessed"]["oei_agri_pv"]

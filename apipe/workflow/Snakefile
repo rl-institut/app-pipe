@@ -14,19 +14,19 @@ from apipe.config import GLOBAL_CONFIG
 config = GLOBAL_CONFIG
 config.update(load_dataset_configs())
 
-# Path to esys appdata
-APPDATA_ESYS_PATH = get_abs_dataset_path("appdata", "esys")
-DATASETS_ESYS_PATH = os.path.join(
-    get_abs_dataset_path("datasets", "esys_raw"), "data"
-)
+# # Path to esys appdata
+# APPDATA_ESYS_PATH = get_abs_dataset_path("appdata", "esys")
+# DATASETS_ESYS_PATH = os.path.join(
+#     get_abs_dataset_path("datasets", "esys_raw"), "data"
+# )
 
 
 # Include store modules
 include: "../store/preprocessed/module.smk"
 include: "../store/datasets/module.smk"
 include: "../store/appdata/module.smk"
-# Include esys snakefiles
-include: "../esys/Snakefile"
+# # Include esys snakefiles
+# include: "../esys/Snakefile"
 
 
 # ===== RULES =====
@@ -35,7 +35,7 @@ include: "../esys/Snakefile"
 rule all:
     input:
         app_datapackage=rules.appdata_datapackage_create_datapackage.output,
-        esys_appdata=rules.make_esys_appdata.output,
+        # esys_appdata=rules.make_esys_appdata.output,
 
 rule clean:
     """

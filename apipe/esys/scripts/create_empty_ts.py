@@ -33,10 +33,7 @@ from oemoflex.model.model_structure import module_path
 from apipe.esys.esys import model
 from apipe.esys.esys.config.esys_conf import load_yaml, settings
 from apipe.esys.esys.model import model_structures
-from apipe.esys.esys.tools.data_processing import (
-    HEADER_B3_TS,
-    stack_timeseries,
-)
+from apipe.esys.esys.tools.data_processing import HEADER_B3_TS, stack_timeseries
 
 
 def get_sub_dict(subsub_key, _dict):

@@ -3,15 +3,8 @@ import pandas as pd
 
 from apipe.config import GLOBAL_CONFIG
 from apipe.scripts.datasets import mastr
-from apipe.scripts.geo import (
-    overlay,
-    rename_filter_attributes,
-    write_geofile,
-)
-from apipe.store.utils import (
-    PATH_TO_REGION_DISTRICTS_GPKG,
-    get_names_from_nuts,
-)
+from apipe.scripts.geo import overlay, rename_filter_attributes, write_geofile
+from apipe.store.utils import PATH_TO_REGION_DISTRICTS_GPKG, get_names_from_nuts
 
 
 def process() -> None:

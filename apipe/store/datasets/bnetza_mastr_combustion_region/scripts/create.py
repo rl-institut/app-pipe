@@ -3,11 +3,7 @@ import pandas as pd
 
 from apipe.config import GLOBAL_CONFIG
 from apipe.scripts.datasets import mastr
-from apipe.scripts.geo import (
-    overlay,
-    rename_filter_attributes,
-    write_geofile,
-)
+from apipe.scripts.geo import overlay, rename_filter_attributes, write_geofile
 from apipe.store.utils import (
     PATH_TO_REGION_DISTRICTS_GPKG,
     df_merge_string_columns,

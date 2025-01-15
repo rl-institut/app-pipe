@@ -180,3 +180,8 @@ module app_settings:
     snakefile: "app_settings/create.smk"
     config: config["store"]["datasets"]["app_settings"]
 use rule * from app_settings as datasets_app_settings_*
+
+module demand_heat_region2:
+    snakefile: "demand_heat_region2/create.smk"
+    config: config["store"]["datasets"]["demand_heat_region2"]
+use rule * from demand_heat_region2 as datasets_demand_heat_region2_*
