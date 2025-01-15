@@ -36,7 +36,7 @@ spezifisch für die Region **r120640428428** :
 ------------------------------------------------------------------------------------------------------------------------
 ### Wärmebedarf Niedrigtemperaturwärme
 
-#### Gesamtwärmebedarf Niedrigtemperaturwärme zentral (2045) in GWh
+#### Gesamtwärmebedarf Niedrigtemperaturwärme zentral (2045) in MWh
 
 | Name                         | Raw-Datensatz | Dataset                                                       | Kommentar       |
 |------------------------------|---------------|---------------------------------------------------------------|-----------------|
@@ -48,7 +48,7 @@ spezifisch für die Region **r120640428428** :
 
 *[Platzhalter für weiterführende Erklärungen]*
 
-#### Gesamtwärmebedarf Niedrigtemperaturwärme dezentral (2045) in GWh
+#### Gesamtwärmebedarf Niedrigtemperaturwärme dezentral (2045) in MWh
 
 | Name                         | Raw-Datensatz | Dataset                                                       | Kommentar       |
 |------------------------------|---------------|---------------------------------------------------------------|-----------------|
@@ -86,7 +86,7 @@ Annahmen:
 - Temperaturniveau: 150-500′C (med)
 - Anwendungsgebiet: Prozessdampf- und Warmwasser für Industrieprozesse [Quelle:Langfristszenarien]
 
-#### Gesamtwärmebedarf Prozesswärme (2045) in GWh
+#### Gesamtwärmebedarf Prozesswärme (2045) in MWh
 
 | Name                          | Raw-Datensatz | Dataset                                                       | Kommentar       |
 |-------------------------------|---------------|---------------------------------------------------------------|-----------------|
@@ -106,7 +106,7 @@ Annahmen:
 - Temperaturniveau: >-500′C (high)
 - Anwendungsgebiet: Industrieöfen und Hochtemperaturverfahren für Industrieprozesse [Quelle:Langfristszenarien]
 
-#### Gesamtwärmebedarf Prozesswärme (2045) in GWh
+#### Gesamtwärmebedarf Prozesswärme (2045) in MWh
 
 | Name                   | Raw-Datensatz | Dataset                                                       | Kommentar       |
 |------------------------|---------------|---------------------------------------------------------------|-----------------|
@@ -135,7 +135,7 @@ Annahmen:
 | _heat_low_decentral-solarthermal_plant-profile_ |               |         |           |
 
 
-#### Ausbaupotentiale EE-Technologie in GW
+#### Ausbaupotentiale EE-Technologie in MW
 
 | Name                                                       | Raw-Datensatz | Dataset | Kommentar |
 |------------------------------------------------------------|---------------|---------|-----------|
@@ -149,7 +149,15 @@ Annahmen:
 ----------------------------------------------------------------------------------------------------------------------
 ### Wärmepumpen 
 
-#### Ausbaupotentiale für Wärmepumpen in GW
+#### Ausbaupotentiale für Wärmepumpen in MW
+
+| Name                                                | Raw-Datensatz | Dataset | Kommentar |
+|-----------------------------------------------------|---------------|---------|-----------|
+| _electricity-heatpump_central-capacity_potential_   |               |         |           | 
+| _electricity-heatpump_decentral-capacity_potential_ |               |         |           | 
+| _electricity-heatpump_heat_med-capacity_potential_  |               |         |           | 
+
+#### Feste Kapazitäten für Wärmepumpen in MW
 
 | Name                                                | Raw-Datensatz | Dataset | Kommentar |
 |-----------------------------------------------------|---------------|---------|-----------|
@@ -168,7 +176,7 @@ Annahmen:
 ----------------------------------------------------------------------------------------------------------------------
 ## Kraft-Wärme-Kopplung
 
-#### Ausbaupotentiale für KWK in GW
+#### Ausbaupotentiale für KWK in MW
 
 | Name                                                | Raw-Datensatz | Dataset | Kommentar |
 |-----------------------------------------------------|---------------|---------|-----------|
@@ -187,7 +195,7 @@ Annahmen:
 | _residual_waste-extchp_heat_low_central-capacity_potential_  |               |         |           | 
 
 
-#### feste Kapazitäten für KWK in GW
+#### feste Kapazitäten für KWK in MW
 
 | Name                                                | Raw-Datensatz | Dataset | Kommentar |
 |-----------------------------------------------------|---------------|---------|-----------|
@@ -208,7 +216,7 @@ Annahmen:
 ----------------------------------------------------------------------------------------------------------------------
 ## Brennkessel
 
-#### Ausbaupotentiale für Brennkessel in GW
+#### Ausbaupotentiale für Brennkessel in MW
 
 | Name                                               | Raw-Datensatz | Dataset | Kommentar |
 |----------------------------------------------------|---------------|---------|-----------|
@@ -220,7 +228,7 @@ Annahmen:
 | _h2-boiler_heat_high-capacity_potential_                     |               |         |           | 
 
 
-#### feste Kapazitäten für Brennkessel in GW
+#### feste Kapazitäten für Brennkessel in MW
 
 | Name                                          | Raw-Datensatz | Dataset | Kommentar |
 |-----------------------------------------------|---------------|---------|-----------|
@@ -234,33 +242,32 @@ Annahmen:
 ----------------------------------------------------------------------------------------------------------------------
 ## Speicher
 
-#### Ausbaupotentiale für Speicher in GW
+#### Ausbaupotentiale für Speicher in MW
 
-| Name                                              | Raw-Datensatz | Dataset | Kommentar |
-|---------------------------------------------------|---------------|---------|-----------|
-| _electricity-battery_storage-capacity_potential_ |               |         |           | 
+| Name                                                   | Raw-Datensatz | Dataset | Kommentar |
+|--------------------------------------------------------|---------------|---------|-----------|
+| _electricity-large_battery_storage-capacity_potential_ |               |         |           |
 | _heat_low_central-storage-capacity_potential_          |               |         |           | 
-| _heat_low_decentral-storage-capacity_potential_            |               |         |           |
 
-#### feste Kapazitäten für Speicher in GW
 
-| Name                                    | Raw-Datensatz | Dataset | Kommentar |
-|-----------------------------------------|---------------|---------|-----------|
-| _electricity-battery_storage-capacity_ |               |         |           | 
-| _heat_low_central-storage-capacity_ |               |         |           | 
+#### feste Kapazitäten für Speicher in MWh
+
+| Name                                   | Raw-Datensatz | Dataset | Kommentar |
+|----------------------------------------|---------------|---------|-----------|
+| _electricity-small_battery_storage-capacity_potential_ |               |         |           |
 | _heat_low_decentral-storage-capacity_  |               |         |           |
 
 ----------------------------------------------------------------------------------------------------------------------
 ## Elektrolyseur
 
-#### Ausbaupotentiale für Elektrolyseur  in GW
+#### Ausbaupotentiale für Elektrolyseur  in MW
 
 | Name                                          | Raw-Datensatz | Dataset | Kommentar |
 |-----------------------------------------------|---------------|---------|-----------|
 | _electricity-electrolyzer-capacity_potential_ |               |         |           | 
 
 
-#### feste Kapazitäten für Elektrolyseur in GW
+#### feste Kapazitäten für Elektrolyseur in MW
 
 | Name                                | Raw-Datensatz | Dataset | Kommentar |
 |-------------------------------------|---------------|---------|-----------|
@@ -269,7 +276,7 @@ Annahmen:
 ----------------------------------------------------------------------------------------------------------------------
 ## Export
 
-#### feste Kapazitäten für Export in GW
+#### feste Kapazitäten für Export in MW
 
 | Name                          | Raw-Datensatz | Dataset | Kommentar |
 |-------------------------------|---------------|---------|-----------|
