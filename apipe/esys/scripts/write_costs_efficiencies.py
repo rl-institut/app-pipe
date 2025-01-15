@@ -13,6 +13,8 @@ The mapped costs and efficiencies are then written to
 import os
 import sys
 
+import pandas as pd
+
 from apipe.esys.esys.config.esys_conf import add_snake_logger, settings
 from apipe.esys.esys.tools.data_processing import (
     load_b3_scalars,
@@ -97,12 +99,17 @@ def map_var_value_costs_effs(df_1, df_2, cols):
 if __name__ == "__main__":
     path_default_costs_eff = sys.argv[1]
     path_raw_costs_eff = sys.argv[2]
-    path_costs_eff = sys.argv[3]
+    path_region_costs_eff = sys.argv[3]
+    path_costs_eff = sys.argv[4]
 
     logger = add_snake_logger("data_processing")
 
     default_costs_eff = load_b3_scalars(path_default_costs_eff)
     raw_costs_eff = load_b3_scalars(path_raw_costs_eff)
+    region_spec_costs_eff = load_b3_scalars(path_region_costs_eff)
+
+    # Concat region specific and non-region-specific data
+    all_costs_eff = pd.concat([raw_costs_eff, region_spec_costs_eff])
 
     # Name of Columns to be filled
     target_cols = ["var_value", "var_unit", "source", "comment"]
@@ -114,7 +121,7 @@ if __name__ == "__main__":
     # Map values from raw_costs_efficiencies.csv with
     # default_costs_efficiencies.csv
     costs_eff = map_var_value_costs_effs(
-        default_costs_eff, raw_costs_eff, target_cols
+        default_costs_eff, all_costs_eff, target_cols
     )
 
     # Save costs_efficiencies.csv to store/datasets/esys_raw/data/scalars

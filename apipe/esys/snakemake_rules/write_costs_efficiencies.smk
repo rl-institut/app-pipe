@@ -5,5 +5,6 @@ rule write_costs_efficiencies:
     input:
         "store/datasets/esys_raw/data/scalars/default_costs_efficiencies.csv",
         "store/raw/technology_data/data/raw_costs_efficiencies.csv",
+        "store/raw/technology_data/data/region_specific_scalars.csv",
     output: "store/datasets/esys_raw/data/scalars/costs_efficiencies.csv"
     shell: "python esys/scripts/write_costs_efficiencies.py {input} {output}"
