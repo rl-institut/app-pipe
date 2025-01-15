@@ -26,7 +26,8 @@
     'heat_low_decentral-geothermal_plant',
     'heat_low_central-storage',
     'heat_low_decentral-storage',
-    'electricity-battery_storage',
+    'electricity-small_battery_storage',
+    'electricity-large_battery_storage',
     'h2-export',
     'electricity-export',
 ]
