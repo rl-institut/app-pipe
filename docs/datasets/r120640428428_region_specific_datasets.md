@@ -157,13 +157,15 @@ Annahmen:
 | _electricity-heatpump_decentral-capacity_potential_ |               |         |           | 
 | _electricity-heatpump_heat_med-capacity_potential_  |               |         |           | 
 
+
 #### Feste Kapazitäten für Wärmepumpen in MW
 
-| Name                                                | Raw-Datensatz | Dataset | Kommentar |
-|-----------------------------------------------------|---------------|---------|-----------|
-| _electricity-heatpump_central-capacity_potential_   |               |         |           | 
-| _electricity-heatpump_decentral-capacity_potential_ |               |         |           | 
-| _electricity-heatpump_heat_med-capacity_potential_  |               |         |           | 
+
+| Name                                               | Raw-Datensatz | Dataset | Kommentar |
+|----------------------------------------------------|---------------|---------|-----------|
+| _electricity-heatpump_central-capacity_   |               |         |           | 
+| _electricity-heatpump_decentral-capacity_ |               |         |           | 
+| _electricity-heatpump_heat_med-capacity_  |               |         |           | 
 
 #### COP-Zeitreihen für Wärmepumpen, normiert
 
@@ -254,7 +256,7 @@ Annahmen:
 
 | Name                                   | Raw-Datensatz | Dataset | Kommentar |
 |----------------------------------------|---------------|---------|-----------|
-| _electricity-small_battery_storage-capacity_potential_ |               |         |           |
+| _electricity-small_battery_storage-capacity_ |               |         |           |
 | _heat_low_decentral-storage-capacity_  |               |         |           |
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -268,6 +270,7 @@ Annahmen:
 
 
 #### feste Kapazitäten für Elektrolyseur in MW
+
 
 | Name                                | Raw-Datensatz | Dataset | Kommentar |
 |-------------------------------------|---------------|---------|-----------|
