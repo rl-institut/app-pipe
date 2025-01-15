@@ -175,7 +175,7 @@ def update_df(_df, which, condition, unit):
 if __name__ == "__main__":
     path_empty_sc = sys.argv[1]
     path_default_sc = sys.argv[2]
-    path_default_costs_eff = sys.argv[3]
+    path_unresolved_costs_eff = sys.argv[3]
 
     empty_sc_df = load_b3_scalars(path_empty_sc)
 
@@ -229,8 +229,8 @@ if __name__ == "__main__":
     )
 
     # Write all attributes attached to costs and efficiencies in separate
-    # default_cost_efficiencies.csv file
-    save_df(df_costs_efficiencies, path_default_costs_eff)
+    # unresolved_costs_efficiencies.csv file
+    save_df(df_costs_efficiencies, path_unresolved_costs_eff)
 
     # Write all other scalars in default_scalars.csv
     save_df(df_scalars, path_default_sc)

@@ -5,5 +5,5 @@ rule write_default_scalars:
     input: "store/datasets/esys_raw/data/scalars/empty_scalars.csv"
     output:
         "store/datasets/esys_raw/data/scalars/default_scalars.csv",
-        "store/datasets/esys_raw/data/scalars/default_costs_efficiencies.csv",
+        "store/datasets/esys_raw/data/scalars/unresolved_costs_efficiencies.csv",
     shell: "python esys/scripts/write_default_scalars.py {input} {output}"
