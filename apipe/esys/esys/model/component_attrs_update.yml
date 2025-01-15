@@ -508,9 +508,19 @@ biomass_gas-bpchp_heat_med:
 #######################################################
 # storage
 
-electricity-battery_storage:
+electricity-small_battery_storage:
   carrier: electricity
-  tech: battery_storage
+  tech: small_battery_storage
+  type: storage
+  foreign_keys:
+    bus: electricity
+  defaults:
+    input_parameters: "{}"
+    output_parameters: "{}"
+
+electricity-large_battery_storage:
+  carrier: electricity
+  tech: large_battery_storage
   type: storage
   foreign_keys:
     bus: electricity

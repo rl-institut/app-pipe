@@ -97,13 +97,14 @@ components:
   # backpressure
   - biomass_solid-bpchp_heat_low_decentral
   - biomass_solid-bpchp_heat_low_central
-  - biomass_solid-bpchp_heat_med
+  #- biomass_solid-bpchp_heat_med
   - biomass_gas-bpchp_heat_low_decentral
   - biomass_gas-bpchp_heat_low_central
-  - biomass_gas-bpchp_heat_med
+ # - biomass_gas-bpchp_heat_med
 
   # storage
-  - electricity-battery_storage
+  - electricity-small_battery_storage
+  - electricity-large_battery_storage
   - heat_low_central-storage
   - heat_low_decentral-storage
 
