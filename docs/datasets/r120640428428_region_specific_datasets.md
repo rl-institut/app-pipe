@@ -50,11 +50,11 @@ spezifisch für die Region **r120640428428** :
 
 #### Gesamtwärmebedarf Niedrigtemperaturwärme dezentral (2045) in MWh
 
-| Name                         | Raw-Datensatz | Dataset                                                       | Kommentar       |
-|------------------------------|---------------|---------------------------------------------------------------|-----------------|
-| *heat_low_central-demand_hh* |               |                                                               |                 |
-| *heat_low_central-demand_cts* |               |                                                               |                 |
-| *heat_low_central-demand_ind*     |               |                                                               |                 |    
+| Name                            | Raw-Datensatz | Dataset                                                       | Kommentar                                        |
+|---------------------------------|---------------|---------------------------------------------------------------|--------------------------------------------------|
+| *heat_low_decentral-demand_hh*  |               |                                                               | `features/#3_add_dataset_heat_atlas_brandenburg` |
+| *heat_low_decentral-demand_cts* |               |                                                               |                                                  |
+| *heat_low_decentral-demand_ind* |               |                                                               |                                                  |
 
  
 
