@@ -175,7 +175,7 @@ def update_df(_df, which, condition, unit):
 if __name__ == "__main__":
     path_empty_sc = sys.argv[1]
     path_default_sc = sys.argv[2]
-    path_unresolved_costs_eff = sys.argv[3]
+    path_unresolved_scalars = sys.argv[3]
 
     empty_sc_df = load_b3_scalars(path_empty_sc)
 
@@ -194,43 +194,47 @@ if __name__ == "__main__":
 
     # Get all unique values for var_name
     var_names_all = list(df_updated["var_name"].unique())
-    # Get all values for var_name in context of costs and efficiencies
-    var_names_costs_efficiencies = list(
-        write_default_scalars.costs_efficiencies
+    # Get all values for var_name for region-specific and non-region-specific
+    # data and save in one list
+    var_names_reg_non_reg_specific_sc = list(
+        write_default_scalars.non_region_specific_scalars
+    )
+    var_names_reg_non_reg_specific_sc.extend(
+        list(write_default_scalars.region_specific_scalars)
     )
     # Get all remaining var_values needed for default_scalars.csv
-    var_names_scalars = [
+    # Note: `default_scalars.csv` contains pre-set data from empty_scalars.csv
+    #        and default scalars from `write_default_scalars.yml`
+    var_names_default_sc = [
         var_name
         for var_name in var_names_all
-        if var_name not in var_names_costs_efficiencies
+        if var_name not in var_names_reg_non_reg_specific_sc
     ]
 
-    df_costs_efficiencies = filter_df(
-        df_updated, "var_name", var_names_costs_efficiencies
+    df_reg_non_reg_specific_sc = filter_df(
+        df_updated, "var_name", var_names_reg_non_reg_specific_sc
     )
 
-    # Get all already by default set values of costs and efficiencies
-    df_default_costs_efficiencies = df_costs_efficiencies.dropna(
-        subset=["var_value"]
-    )
+    # Get all already by default set values of region-specific and
+    # non-region-specific scalars
+    df_default_scalars = df_reg_non_reg_specific_sc.dropna(subset=["var_value"])
 
-    # Keep only non default values of costs and efficiencies
-    df_costs_efficiencies = df_costs_efficiencies[
-        df_costs_efficiencies["var_value"].isna()
+    # Keep only non default values of region-specific and
+    # non-region-specific scalars
+    df_unresolved_sc = df_reg_non_reg_specific_sc[
+        df_reg_non_reg_specific_sc["var_value"].isna()
     ]
 
     # Get remaining scalars
-    df_scalars = filter_df(df_updated, "var_name", var_names_scalars)
+    df_scalars = filter_df(df_updated, "var_name", var_names_default_sc)
 
     # Append all values set by default of costs and efficiencies to remaining
     # scalars
-    df_scalars = pd.concat(
-        [df_scalars, df_default_costs_efficiencies], ignore_index=False
-    )
+    df_scalars = pd.concat([df_scalars, df_default_scalars], ignore_index=False)
 
     # Write all attributes attached to costs and efficiencies in separate
-    # unresolved_costs_efficiencies.csv file
-    save_df(df_costs_efficiencies, path_unresolved_costs_eff)
+    # unresolved_scalars.csv file
+    save_df(df_unresolved_sc, path_unresolved_scalars)
 
     # Write all other scalars in default_scalars.csv
     save_df(df_scalars, path_default_sc)
