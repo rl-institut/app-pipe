@@ -232,7 +232,7 @@ if __name__ == "__main__":
     # scalars
     df_scalars = pd.concat([df_scalars, df_default_scalars], ignore_index=False)
 
-    # Write all attributes attached to costs and efficiencies in separate
+    # Write all scalars that do not have default values in separate
     # unresolved_scalars.csv file
     save_df(df_unresolved_sc, path_unresolved_scalars)
 

@@ -89,8 +89,9 @@ def map_var_value_costs_effs(df_1, df_2, cols):
                 df_1.loc[index, col] = df_3[col].values[0]
         else:
             raise ValueError(
-                f"Value of var_name '{var_name}', carrier '{carrier}' and tech "
-                f"'{tech}' is missing in {path_raw_costs_eff}."
+                f"Value of var_name '{var_name}', carrier '{carrier}' and tech"
+                f" '{tech}' is missing in {path_raw_costs_eff} or "
+                f"{path_region_specific_scalars}."
             )
 
     return df_1
@@ -99,14 +100,14 @@ def map_var_value_costs_effs(df_1, df_2, cols):
 if __name__ == "__main__":
     path_unresolved_scalars = sys.argv[1]
     path_raw_costs_eff = sys.argv[2]
-    path_region_costs_eff = sys.argv[3]
-    path_costs_eff = sys.argv[4]
+    path_region_specific_scalars = sys.argv[3]
+    path_completed_scalars = sys.argv[4]
 
     logger = add_snake_logger("data_processing")
 
     unresolved_scalars = load_b3_scalars(path_unresolved_scalars)
     raw_costs_eff = load_b3_scalars(path_raw_costs_eff)
-    region_spec_costs_eff = load_b3_scalars(path_region_costs_eff)
+    region_spec_costs_eff = load_b3_scalars(path_region_specific_scalars)
 
     # Concat region specific and non-region-specific data
     all_costs_eff = pd.concat([raw_costs_eff, region_spec_costs_eff])
@@ -125,7 +126,7 @@ if __name__ == "__main__":
     )
 
     # Save completed_scalars.csv to store/datasets/esys_raw/data/scalars
-    save_df(costs_eff, path_costs_eff)
+    save_df(costs_eff, path_completed_scalars)
 
     # Delete file unresolved_scalars.csv
     if settings.write_costs_efficiencies.delete_default:
