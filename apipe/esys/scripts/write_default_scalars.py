@@ -8,14 +8,9 @@ new csv file.
 import sys
 
 import numpy as np
-import pandas as pd
 
 from apipe.esys.esys.config.esys_conf import write_default_scalars
-from apipe.esys.esys.tools.data_processing import (
-    filter_df,
-    load_b3_scalars,
-    save_df,
-)
+from apipe.esys.esys.tools.data_processing import load_b3_scalars, save_df
 
 
 def clear_input_parameters_of_storages(_df):
@@ -192,49 +187,22 @@ if __name__ == "__main__":
             empty_sc_df, value["which"], condition, value["var_unit"]
         )
 
-    # Get all unique values for var_name
-    var_names_all = list(df_updated["var_name"].unique())
-    # Get all values for var_name for region-specific and non-region-specific
-    # data and save in one list
-    var_names_reg_non_reg_specific_sc = list(
-        write_default_scalars.non_region_specific_scalars
-    )
-    var_names_reg_non_reg_specific_sc.extend(
-        list(write_default_scalars.region_specific_scalars)
-    )
-    # Get all remaining var_values needed for default_scalars.csv
-    # Note: `default_scalars.csv` contains pre-set data from empty_scalars.csv
-    #        and default scalars from `write_default_scalars.yml`
-    var_names_default_sc = [
-        var_name
-        for var_name in var_names_all
-        if var_name not in var_names_reg_non_reg_specific_sc
-    ]
-
-    df_reg_non_reg_specific_sc = filter_df(
-        df_updated, "var_name", var_names_reg_non_reg_specific_sc
+    # Get unresolved entries (nan in value, unit, source and comment)
+    nan_values = (
+        df_updated[["var_value", "var_unit", "source", "comment"]]
+        .isna()
+        .all(axis=1)
     )
 
-    # Get all already by default set values of region-specific and
-    # non-region-specific scalars
-    df_default_scalars = df_reg_non_reg_specific_sc.dropna(subset=["var_value"])
+    # Get all already by default set values
+    df_default_scalars = df_updated[~nan_values]
 
-    # Keep only non default values of region-specific and
-    # non-region-specific scalars
-    df_unresolved_sc = df_reg_non_reg_specific_sc[
-        df_reg_non_reg_specific_sc["var_value"].isna()
-    ]
+    # Keep only non default values
+    df_unresolved_sc = df_updated[nan_values]
 
-    # Get remaining scalars
-    df_scalars = filter_df(df_updated, "var_name", var_names_default_sc)
-
-    # Append all values set by default of costs and efficiencies to remaining
-    # scalars
-    df_scalars = pd.concat([df_scalars, df_default_scalars], ignore_index=False)
+    # Write default scalars in default_scalars.csv
+    save_df(df_default_scalars, path_default_sc)
 
     # Write all scalars that do not have default values in separate
     # unresolved_scalars.csv file
     save_df(df_unresolved_sc, path_unresolved_scalars)
-
-    # Write all other scalars in default_scalars.csv
-    save_df(df_scalars, path_default_sc)

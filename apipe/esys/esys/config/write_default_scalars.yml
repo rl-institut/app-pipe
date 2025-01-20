@@ -62,28 +62,3 @@ write_default_scalars:
     "which": "emission_reduction_factor",
     "var_unit": "None",
   }
-
-non_region_specific_scalars: [
-    "capacity_cost_overnight",
-    "condensing_efficiency",
-    "efficiency",
-    "electric_efficiency",
-    "fixom_cost",
-    "lifetime",
-    "loss_rate",
-    "marginal_cost",
-    "storage_capacity_cost_overnight",
-    "storage_fixom_cost",
-    "thermal_efficiency",
-    "wacc",
-    "expandable",
-    "carrier_cost"
-  ]
-
-region_specific_scalars: [
-    "amount",
-    "capacity",
-    "capacity_potential",
-    "storage_capacity",
-    "storage_capacity_potential"
-  ]
