@@ -10,12 +10,12 @@ spezifisch für die Region **r120640428428** :
 
 #### Gesamtstrombedarf (2045), normiert
 
-| Name                     | Raw-Datensatz | Dataset                                                       | Kommentar       |
-|--------------------------|---------------|---------------------------------------------------------------|-----------------|
-| *electricity-demand_hh*  |               |                                                               |                 |
-| *electricity-demand_cts* |               |                                                               |                 |
-| *electricity-demand_ind* |               |                                                               |                 |    
-| *electricity-demand_mob* |               |                                                               |                 |
+| Name                     | Raw-Datensatz | Dataset                   | Kommentar |
+|--------------------------|---------------|---------------------------|-----------|
+| *electricity-demand_hh*  | demandregio   | demand_electricity_region |           |
+| *electricity-demand_cts* | demandregio   | demand_electricity_region |           |
+| *electricity-demand_ind* | demandregio   | demand_electricity_region |           |
+| *electricity-demand_mob* |               |                           |           |
  
 
 *[Platzhalter für weiterführende Erklärungen und Annahmen]*
@@ -24,12 +24,12 @@ spezifisch für die Region **r120640428428** :
 
 #### Stromlastprofile, normiert
 
-| Name                             | Raw-Datensatz | Dataset                                                       | Kommentar           |
-|----------------------------------|---------------|---------------------------------------------------------------|---------------------|
-| *electricity-demand_hh_profile*  |               |                                                               | not region-specific |
-| *electricity-demand_cts_profile* |               |                                                               | not region-specific                    |
-| *electricity-demand_ind_profile* |               |                                                               | not region-specific                    |    
-| *electricity-demand_mob_profile* |               |                                                               | not region-specific                    |   
+| Name                             | Raw-Datensatz | Dataset                   | Kommentar |
+|----------------------------------|---------------|---------------------------|-----------|
+| *electricity-demand_hh_profile*  | demandregio   | demand_electricity_region |           |
+| *electricity-demand_cts_profile* | demandregio   | demand_electricity_region |           |
+| *electricity-demand_ind_profile* | demandregio   | demand_electricity_region |           |
+| *electricity-demand_mob_profile* |               |                           |           |
 
 *[Platzhalter für weiterführende Erklärungen und Annahmen]*
 
@@ -38,45 +38,35 @@ spezifisch für die Region **r120640428428** :
 
 #### Gesamtwärmebedarf Niedrigtemperaturwärme zentral (2045) in MWh
 
-| Name                         | Raw-Datensatz | Dataset                                                       | Kommentar       |
-|------------------------------|---------------|---------------------------------------------------------------|-----------------|
-| *heat_low_central-demand_hh* |               |                                                               |                 |
-| *heat_low_central-demand_cts* |               |                                                               |                 |
-| *heat_low_central-demand_ind*     |               |                                                               |                 |    
+| Name                          | Raw-Datensatz      | Dataset             | Kommentar                                                               |
+|-------------------------------|--------------------|---------------------|-------------------------------------------------------------------------|
+| *heat_low_central-demand_hh*  | wfbb_heat_atlas_bb | demand_heat_region2 | Manueller Checkout von `features/#3_add_dataset_heat_atlas_brandenburg` |
+| *heat_low_central-demand_cts* | wfbb_heat_atlas_bb | demand_heat_region2 | Manueller Checkout von `features/#3_add_dataset_heat_atlas_brandenburg` |
+| *heat_low_central-demand_ind* | wfbb_heat_atlas_bb | demand_heat_region2 | Manueller Checkout von `features/#3_add_dataset_heat_atlas_brandenburg` | 
 
- 
+BMWK lfs
 
 *[Platzhalter für weiterführende Erklärungen]*
 
 #### Gesamtwärmebedarf Niedrigtemperaturwärme dezentral (2045) in MWh
 
-| Name                            | Raw-Datensatz | Dataset                                                       | Kommentar                                        |
-|---------------------------------|---------------|---------------------------------------------------------------|--------------------------------------------------|
-| *heat_low_decentral-demand_hh*  |               |                                                               | `features/#3_add_dataset_heat_atlas_brandenburg` |
-| *heat_low_decentral-demand_cts* |               |                                                               |                                                  |
-| *heat_low_decentral-demand_ind* |               |                                                               |                                                  |
+| Name                            | Raw-Datensatz      | Dataset             | Kommentar                                                               |
+|---------------------------------|--------------------|---------------------|-------------------------------------------------------------------------|
+| *heat_low_decentral-demand_hh*  | wfbb_heat_atlas_bb | demand_heat_region2 | Manueller Checkout von `features/#3_add_dataset_heat_atlas_brandenburg` |
+| *heat_low_decentral-demand_cts* | wfbb_heat_atlas_bb | demand_heat_region2 | Manueller Checkout von `features/#3_add_dataset_heat_atlas_brandenburg` |
+| *heat_low_decentral-demand_ind* | wfbb_heat_atlas_bb | demand_heat_region2 | Manueller Checkout von `features/#3_add_dataset_heat_atlas_brandenburg` |
 
- 
-
-*[Platzhalter für weiterführende Erklärungen]*
-
-#### Wärmelastprofile Niedrigtemperaturwärme zentral, normiert
-
-| Name                                  | Raw-Datensatz | Dataset                                                       | Kommentar       |
-|---------------------------------------|---------------|---------------------------------------------------------------|-----------------|
-| *heat_low_central-demand_hh_profile*  |               |                                                               |                 |
-| *heat_low_central-demand_cts_profile* |               |                                                               |                 |
-| *heat_low_central-demand_ind_profile* |               |                                                               |                 | 
+BMWK lfs
 
 *[Platzhalter für weiterführende Erklärungen]*
 
-#### Wärmelastprofile Niedrigtemperaturwärme dezentral, normiert
+#### Wärmelastprofile Niedrigtemperaturwärme zentral und dezentral, normiert
 
-| Name                                    | Raw-Datensatz | Dataset                                                       | Kommentar       |
-|-----------------------------------------|---------------|---------------------------------------------------------------|-----------------|
-| *heat_low_decentral-demand_hh_profile*  |               |                                                               |                 |
-| *heat_low_decentral-demand_cts_profile* |               |                                                               |                 |
-| *heat_low_decentral-demand_ind_profile* |               |                                                               |                 | 
+| Name                                  | Raw-Datensatz | Dataset            | Kommentar |
+|---------------------------------------|---------------|--------------------|-----------|
+| *heat_low_central-demand_hh_profile*  | demandregio   | demand_heat_region |           |
+| *heat_low_central-demand_cts_profile* | demandregio   | demand_heat_region |           |
+| *heat_low_central-demand_ind_profile* | demandregio   | demand_heat_region |           |
 
 *[Platzhalter für weiterführende Erklärungen]*
 
@@ -137,14 +127,14 @@ Annahmen:
 
 #### Ausbaupotentiale EE-Technologie in MW
 
-| Name                                                       | Raw-Datensatz | Dataset | Kommentar |
-|------------------------------------------------------------|---------------|---------|-----------|
-| _electricity-wind-capacity_potential_                      |               |         |           | 
-| _electricity-pv_ground-capacity_potential_                 |               |         |           | 
-| _electricity-pv_agri_vertical-capacity_potential_          |               |         |           | 
-| _electricity-pv_agri_horizontal-capacity_potential_        |               |         |           |
-| _electricity-pv_rooftop-capacity_potential_                |               |         |           | 
-| _heat_low_decentral-solarthermal_plant-capacity_potential_ |               |         |           |
+| Name                                                       | Raw-Datensatz          | Dataset                         | Kommentar                                                      |
+|------------------------------------------------------------|------------------------|---------------------------------|----------------------------------------------------------------|
+| _electricity-wind-capacity_potential_                      |                        |                                 | Keine Windpotenzialflächen nach Regionalplan 2024 (1. Entwurf) |
+| _electricity-pv_ground-capacity_potential_                 | oei_agri_pv            | potentialarea_pv_ground_region2 | Bezeichnung in Daten: *soil_quality_low*                       |
+| _electricity-pv_agri_vertical-capacity_potential_          | oei_agri_pv            | potentialarea_pv_ground_region2 | Bezeichnung in Daten: *soil_quality_medium*                    |
+| _electricity-pv_agri_horizontal-capacity_potential_        | oei_agri_pv            | potentialarea_pv_ground_region2 | Bezeichnung in Daten: *permanent_crops*                        |
+| _electricity-pv_rooftop-capacity_potential_                | wfbb_pv_roof_potential | potentialarea_pv_roof_region2   |                                                                |
+| _heat_low_decentral-solarthermal_plant-capacity_potential_ |                        |                                 |                                                                |
 
 ----------------------------------------------------------------------------------------------------------------------
 ### Wärmepumpen 
