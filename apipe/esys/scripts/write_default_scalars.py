@@ -8,14 +8,9 @@ new csv file.
 import sys
 
 import numpy as np
-import pandas as pd
 
 from apipe.esys.esys.config.esys_conf import write_default_scalars
-from apipe.esys.esys.tools.data_processing import (
-    filter_df,
-    load_b3_scalars,
-    save_df,
-)
+from apipe.esys.esys.tools.data_processing import load_b3_scalars, save_df
 
 
 def clear_input_parameters_of_storages(_df):
@@ -175,7 +170,7 @@ def update_df(_df, which, condition, unit):
 if __name__ == "__main__":
     path_empty_sc = sys.argv[1]
     path_default_sc = sys.argv[2]
-    path_default_costs_eff = sys.argv[3]
+    path_unresolved_scalars = sys.argv[3]
 
     empty_sc_df = load_b3_scalars(path_empty_sc)
 
@@ -192,45 +187,22 @@ if __name__ == "__main__":
             empty_sc_df, value["which"], condition, value["var_unit"]
         )
 
-    # Get all unique values for var_name
-    var_names_all = list(df_updated["var_name"].unique())
-    # Get all values for var_name in context of costs and efficiencies
-    var_names_costs_efficiencies = list(
-        write_default_scalars.costs_efficiencies
-    )
-    # Get all remaining var_values needed for default_scalars.csv
-    var_names_scalars = [
-        var_name
-        for var_name in var_names_all
-        if var_name not in var_names_costs_efficiencies
-    ]
-
-    df_costs_efficiencies = filter_df(
-        df_updated, "var_name", var_names_costs_efficiencies
+    # Get unresolved entries (nan in value, unit, source and comment)
+    nan_values = (
+        df_updated[["var_value", "var_unit", "source", "comment"]]
+        .isna()
+        .all(axis=1)
     )
 
-    # Get all already by default set values of costs and efficiencies
-    df_default_costs_efficiencies = df_costs_efficiencies.dropna(
-        subset=["var_value"]
-    )
+    # Get all already by default set values
+    df_default_scalars = df_updated[~nan_values]
 
-    # Keep only non default values of costs and efficiencies
-    df_costs_efficiencies = df_costs_efficiencies[
-        df_costs_efficiencies["var_value"].isna()
-    ]
+    # Keep only non default values
+    df_unresolved_sc = df_updated[nan_values]
 
-    # Get remaining scalars
-    df_scalars = filter_df(df_updated, "var_name", var_names_scalars)
+    # Write default scalars in default_scalars.csv
+    save_df(df_default_scalars, path_default_sc)
 
-    # Append all values set by default of costs and efficiencies to remaining
-    # scalars
-    df_scalars = pd.concat(
-        [df_scalars, df_default_costs_efficiencies], ignore_index=False
-    )
-
-    # Write all attributes attached to costs and efficiencies in separate
-    # default_cost_efficiencies.csv file
-    save_df(df_costs_efficiencies, path_default_costs_eff)
-
-    # Write all other scalars in default_scalars.csv
-    save_df(df_scalars, path_default_sc)
+    # Write all scalars that do not have default values in separate
+    # unresolved_scalars.csv file
+    save_df(df_unresolved_sc, path_unresolved_scalars)

@@ -1,53 +1,4 @@
 write_default_scalars:
-  capacity_backpressure: {
-    "var_name": "capacity",
-    "type": backpressure,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MW",
-  }
-  capacity_conversion: {
-    "var_name": "capacity",
-    "type": conversion,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MW",
-  }
-  capacity_extraction: {
-    "var_name": "capacity",
-    "type": extraction,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MW",
-  }
-  capacity_storage: {
-    "var_name": "capacity",
-    "type": storage,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MW",
-  }
-  capacity_volatile: {
-    "var_name": "capacity",
-    "type": volatile,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MW",
-  }
-  capacity_shortage: {
-    "var_name": "capacity",
-    "type": shortage,
-    "tech": None,
-    "which": "high_capacity",
-    "var_unit": "MW",
-  }
-  capacity_excess: {
-    "var_name": "capacity",
-    "type": excess,
-    "tech": None,
-    "which": "empty",
-    "var_unit": "MW",
-  }
   from_to_capacity_link: {
     "var_name": "from_to_capacity",
     "type": link,
@@ -62,39 +13,11 @@ write_default_scalars:
     "which": "high_capacity",
     "var_unit": "MW",
   }
-  loss_link: {
+  loss_link: {# TODO: Add useful loss to default-option in write_default_scalars.py
     "var_name": "loss",
     "type": link,
     "tech": None,
     "which": "zeros",
-    "var_unit": "None",
-  }
-  amount: {
-    "var_name": "amount",
-    "type": None,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MWh/a",
-  }
-  capacity_potential: {
-    "var_name": "capacity_potential",
-    "type": None,
-    "tech": None,
-    "which": "empty",
-    "var_unit": "MW",
-  }
-  carrier_cost: {
-    "var_name": "carrier_cost",
-    "type": None,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "Eur/MWh",
-  }
-  expandable: {
-    "var_name": "expandable",
-    "type": None,
-    "tech": None,
-    "which": "false",
     "var_unit": "None",
   }
   input_parameters_storage: {
@@ -118,20 +41,6 @@ write_default_scalars:
     "which": "zeros",
     "var_unit": "EUR/MWh",
   }
-  storage_capacity: {
-    "var_name": "storage_capacity",
-    "type": None,
-    "tech": None,
-    "which": "zeros",
-    "var_unit": "MWh",
-  }
-  storage_capacity_potential: {
-    "var_name": "storage_capacity_potential",
-    "type": None,
-    "tech": None,
-    "which": "empty",
-    "var_unit": "MWh",
-  }
   emissions_not_modeled: {
     "var_name": "emissions_not_modeled",
     "type": None,
@@ -153,18 +62,3 @@ write_default_scalars:
     "which": "emission_reduction_factor",
     "var_unit": "None",
   }
-costs_efficiencies: [
-    "capacity_cost_overnight",
-    "condensing_efficiency",
-    "efficiency",
-    "electric_efficiency",
-    "fixom_cost",
-    "lifetime",
-    "loss_rate",
-    "marginal_cost",
-    "storage_capacity_cost_overnight",
-    "storage_fixom_cost",
-    "thermal_efficiency",
-    "wacc",
-    #"amount",
-  ]

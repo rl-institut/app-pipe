@@ -64,6 +64,7 @@ repos:
             "--disable=R0913", # Disable the R0913 error TODO: To be fixed
             "--disable=R1705", # Disable the R1705 error TODO: To be fixed
             "--disable=E0401", # Disable the E0401 error TODO: To be fixed
+            "--disable=E0606", # Disable the E0401 error TODO: To be fixed
             "--disable=E0611", # Disable the E0611 error TODO: To be fixed
             "--disable=W0621", # Disable the W0621 error TODO: To be fixed
             "--disable=W0640", # Disable the W0640 error TODO: To be fixed
@@ -80,6 +81,7 @@ repos:
             "--disable=R1724", # Disable the R1724 error TODO: To be fixed
             "--disable=W0012", # Disable the W0012 error TODO: To be fixed
             "--disable=W0611", # Disable the W0611 error TODO: To be fixed
+            "--disable=W1203", # Disable the W0611 error TODO: To be fixed
             "--disable=C0207", # Disable the C0207 error TODO: To be fixed
             "--disable=E1101", # Disable the E1101 error TODO: To be fixed
             "--max-line-length=80", # Set the maximum line length to 80

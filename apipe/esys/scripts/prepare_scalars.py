@@ -3,11 +3,11 @@ r"""
 Inputs
 -------
 in_path1 : str
-    ``raw/scalars/costs_efficiencies.csv``: path incl. file name of input file
-    with raw scalar data
+    ``store/datasets/esys_raw/data/scalars/completed_scalars.csv``: path incl.
+    file name of input file with raw scalar data
 out_path : str
-    ``results/_resources/scal_costs_efficiencies.csv``: path incl. file name of
-    output file with prepared scalar data
+    ``store/appdata/esys/_resources/scal_costs_efficiencies.csv``: path incl.
+    file name of output file with prepared scalar data
 
 Outputs
 ---------
