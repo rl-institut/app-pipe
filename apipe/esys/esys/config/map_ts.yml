@@ -41,12 +41,12 @@ load: {
     "file": "demand_ind_heat_timeseries.csv",
   },
   "heat_med-demand_ind-profile": {
-    "dataset": "demand_heat_region",
-    "file": "demand_ind_heat_timeseries.csv",
+    "dataset": "demand_heat_ind_med_high",
+    "file": "demand_ind_heat_med_timeseries.csv",
   },
   "heat_high-demand_ind-profile": {
-    "dataset": "demand_heat_region",
-    "file": "demand_ind_heat_timeseries.csv",
+    "dataset": "demand_heat_ind_med_high",
+    "file": "demand_ind_heat_high_timeseries.csv",
   }
 }
 

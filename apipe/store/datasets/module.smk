@@ -106,6 +106,11 @@ module demand_heat_region:
     config: config["store"]["datasets"]["demand_heat_region"]
 use rule * from demand_heat_region as datasets_demand_heat_region_*
 
+module demand_heat_ind_med_high:
+    snakefile: "demand_heat_ind_med_high/create.smk"
+    config: config["store"]["datasets"]["demand_heat_ind_med_high"]
+use rule * from demand_heat_ind_med_high as datasets_demand_heat_ind_med_high_*
+
 module renewable_feedin:
     snakefile: "renewable_feedin/create.smk"
     config: config["store"]["datasets"]["renewable_feedin"]
