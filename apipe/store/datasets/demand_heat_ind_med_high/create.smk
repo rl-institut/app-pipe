@@ -21,5 +21,5 @@ rule prepare_demand_ind_heat_med_high_profiles:
     output:
         DATASET_PATH / "data" / "demand_ind_{carrier}_timeseries.csv",
     run:
-        heat_timeseries = pd.read_csv(input[0]).demand_norm
+        heat_timeseries = pd.read_csv(input[0], sep=";").demand_norm
         heat_timeseries.to_csv(output[0])
