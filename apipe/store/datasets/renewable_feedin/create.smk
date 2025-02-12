@@ -21,4 +21,9 @@ rule normalize_feedin_timeseries:
     run:
         feedin_timeseries = pd.read_csv(input[0]).power
         feedin_timeseries = feedin_timeseries.div(feedin_timeseries.sum())
+
+        # multiply with full load hours
+        feedin_timeseries = feedin_timeseries.multiply(980)  # FFPV
+        # siehe https://github.com/rl-institut/apipe/blob/sle-features/case-study-1/docs/datasets/raw_datasets.md
+
         feedin_timeseries.to_csv(output[0])
