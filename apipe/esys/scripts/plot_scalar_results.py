@@ -65,7 +65,7 @@ def try_to_plot(func):
 @try_to_plot
 def plot_invest_out(carrier):
     var_name = f"invest_out_{carrier}"
-    unit = "W"
+    unit = "MW"
     output_path_plot = os.path.join(
         target, var_name + esys_conf.settings.general.plot_filetype
     )
@@ -85,7 +85,7 @@ def plot_storage_capacity(carrier):
         target, title + esys_conf.settings.general.plot_filetype
     )
     var_name = "storage_capacity"
-    unit = "Wh"
+    unit = "MWh"
 
     df = dp.multi_filter_df(scalars, var_name=var_name, carrier=carrier)
     if esys_conf.settings.plot_scalar_results.agg_regions:
@@ -102,7 +102,7 @@ def plot_storage_invest(carrier):
         target, f"{title}" + esys_conf.settings.general.plot_filetype
     )
     var_name = "invest"
-    unit = "Wh"
+    unit = "MWh"
 
     df = dp.multi_filter_df(scalars, var_name=var_name, carrier=carrier)
     if esys_conf.settings.plot_scalar_results.agg_regions:
@@ -119,7 +119,7 @@ def plot_flow_out(carrier):
         target, f"{title}" + esys_conf.settings.general.plot_filetype
     )
     var_name = f"flow_out_{carrier}"
-    unit = "Wh"
+    unit = "MWh"
 
     df = dp.multi_filter_df(scalars, var_name=var_name)
     df = dp.filter_df(
@@ -142,7 +142,7 @@ def plot_storage_out(carrier):
         target, f"{title}" + esys_conf.settings.general.plot_filetype
     )
     var_name = f"flow_out_{carrier}"
-    unit = "Wh"
+    unit = "MWh"
 
     df = dp.multi_filter_df(var_name=var_name)
     df = dp.filter_df(df, "type", ["storage", "asymmetric_storage"])
@@ -156,7 +156,7 @@ def plot_storage_out(carrier):
 @try_to_plot
 def plot_invest_out_multi_carrier(carriers):
     var_name = [f"invest_out_{carrier}" for carrier in carriers]
-    unit = "W"
+    unit = "MW"
     output_path_plot = os.path.join(
         target, "energy_usage" + esys_conf.settings.general.plot_filetype
     )
@@ -197,7 +197,7 @@ def plot_invest_out_multi_carrier(carriers):
 @try_to_plot
 def plot_flow_out_multi_carrier(carriers):
     var_name = [f"flow_out_{carrier}" for carrier in carriers]
-    unit = "Wh"
+    unit = "MWh"
     output_path_plot = os.path.join(
         target, "summed_energy" + esys_conf.settings.general.plot_filetype
     )
@@ -242,7 +242,7 @@ def plot_flow_out_multi_carrier(carriers):
 def plot_demands(carriers):
     var_name = [f"flow_in_{carrier}" for carrier in carriers]
     tech = "demand"
-    unit = "Wh"
+    unit = "MWh"
     output_path_plot = os.path.join(
         target, "demands" + esys_conf.settings.general.plot_filetype
     )
@@ -285,7 +285,7 @@ def plot_demands(carriers):
 @try_to_plot
 def subplot_invest_out_multi_carrier(carriers):
     var_name = [f"invest_out_{carrier}" for carrier in carriers]
-    unit = "W"
+    unit = "MW"
     output_path_plot = os.path.join(
         target,
         "invested_capacity_subplots" + esys_conf.settings.general.plot_filetype,
@@ -315,7 +315,7 @@ def subplot_invest_out_multi_carrier(carriers):
 @try_to_plot
 def subplot_storage_invest_multi_carrier(carriers):
     var_name = "invest"
-    unit = "Wh"
+    unit = "MWh"
     output_path_plot = os.path.join(
         target,
         "storage_invest_subplots" + esys_conf.settings.general.plot_filetype,
@@ -339,7 +339,7 @@ def subplot_storage_invest_multi_carrier(carriers):
 def subplot_demands(carriers):
     var_name = [f"flow_in_{carrier}" for carrier in carriers]
     tech = "demand"
-    unit = "Wh"
+    unit = "MWh"
     output_path_plot = os.path.join(
         target, "demands_subplots" + esys_conf.settings.general.plot_filetype
     )
@@ -366,7 +366,7 @@ def subplot_demands(carriers):
 @try_to_plot
 def subplot_energy_usage_multi_carrier(carriers):
     var_name = [f"flow_in_{carrier}" for carrier in carriers]
-    unit = "Wh"
+    unit = "MWh"
     output_path_plot = os.path.join(
         target,
         "energy_usage_subplots" + esys_conf.settings.general.plot_filetype,
@@ -396,7 +396,7 @@ def subplot_energy_usage_multi_carrier(carriers):
 @try_to_plot
 def subplot_flow_out_multi_carrier(carriers):
     var_name = [f"flow_out_{carrier}" for carrier in carriers]
-    unit = "Wh"
+    unit = "MWh"
     output_path_plot = os.path.join(
         target,
         "summed_energy_subplots" + esys_conf.settings.general.plot_filetype,
@@ -426,7 +426,7 @@ def subplot_flow_out_multi_carrier(carriers):
 def plot_demands_stacked_carriers(carriers):
     var_name = [f"flow_in_{carrier}" for carrier in carriers]
     tech = "demand"
-    unit = "Wh"
+    unit = "MWh"
     MW_TO_W = 1e6
     output_path_plot = os.path.join(
         target, "demands_stacked" + esys_conf.settings.general.plot_filetype
