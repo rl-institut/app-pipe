@@ -46,12 +46,12 @@ electricity-pv_rooftop: PV (Dachflächen)
 heat_low_decentral-solarthermal_plant: Solarkollektor (dezentral)
 
 # Umwandlung
-biomass_solid-boiler_heat_med: Biomassekessel (fest, mittlere Wärme)
-biomass_solid-boiler_heat_high: Biomassekessel (fest, hohe Wärme)
-electricity-boiler_heat_med: Elektrokessel (mittlere Wärme)
-electricity-boiler_heat_high: Elektrokessel (hohe Wärme)
-h2-boiler_heat_med: Wasserstoffkessel (mittlere Wärme)
-h2-boiler_heat_high: Wasserstoffkessel (hohe Wärme)
+biomass_solid-boiler_heat_med: Biomassekessel (fest, mittlere Wärme) - boiler
+biomass_solid-boiler_heat_high: Biomassekessel (fest, hohe Wärme) - boiler
+electricity-boiler_heat_med: Elektrokessel (mittlere Wärme) - boiler
+electricity-boiler_heat_high: Elektrokessel (hohe Wärme) - boiler
+h2-boiler_heat_med: Wasserstoffkessel (mittlere Wärme) - boiler
+h2-boiler_heat_high: Wasserstoffkessel (hohe Wärme) - boiler
 electricity-electrolyzer: Elektrolyseur
 
 # Wärmepumpen
@@ -60,19 +60,19 @@ electricity-heatpump_decentral: Wärmepumpe (dezentral)
 electricity-heatpump_heat_med: Wärmepumpe (mittel)
 
 # Entnahme-KWK (Kraft-Wärme-Kopplung)
-biomass_solid-extchp_heat_med: Biomasse-KWK (fest, mittel)
-biomass_solid-extchp_heat_high: Biomasse-KWK (fest, hoch)
-biomass_gas-extchp_heat_med: Biogas-KWK (mittel)
-biomass_gas-extchp_heat_high: Biogas-KWK (hoch)
-h2-extchp_heat_high: Wasserstoff-KWK (hoch)
-residual_waste-extchp_heat_high: Restmüll-KWK (hoch)
-residual_waste-extchp_heat_low_central: Restmüll-KWK (niedrig, zentral)
+biomass_solid-extchp_heat_med: Biomasse-KWK (fest, mittel) - extchp
+biomass_solid-extchp_heat_high: Biomasse-KWK (fest, hoch) - extchp
+biomass_gas-extchp_heat_med: Biogas-KWK (mittel) - extchp
+biomass_gas-extchp_heat_high: Biogas-KWK (hoch) - extchp
+h2-extchp_heat_high: Wasserstoff-KWK (hoch) - extchp
+residual_waste-extchp_heat_high: Restmüll-KWK (hoch) - extchp
+residual_waste-extchp_heat_low_central: Restmüll-KWK (niedrig, zentral) - extchp
 
 # Gegendruck-KWK
-biomass_solid-bpchp_heat_low_decentral: Biomasse-Gegendruck-KWK (fest, niedrig, dezentral)
-biomass_solid-bpchp_heat_low_central: Biomasse-Gegendruck-KWK (fest, niedrig, zentral)
-biomass_gas-bpchp_heat_low_decentral: Biogas-Gegendruck-KWK (niedrig, dezentral)
-biomass_gas-bpchp_heat_low_central: Biogas-Gegendruck-KWK (niedrig, zentral)
+biomass_solid-bpchp_heat_low_decentral: Biomasse-Gegendruck-KWK (fest, niedrig, dezentral) - bpchp
+biomass_solid-bpchp_heat_low_central: Biomasse-Gegendruck-KWK (fest, niedrig, zentral) - bpchp
+biomass_gas-bpchp_heat_low_decentral: Biogas-Gegendruck-KWK (niedrig, dezentral) - bpchp
+biomass_gas-bpchp_heat_low_central: Biogas-Gegendruck-KWK (niedrig, zentral) - bpchp
 
 # Speicher
 heat_low_decentral-storage: Wärmespeicher (niedrig, dezentral)

@@ -5,7 +5,7 @@ general:
   scal_index_name: id_scal
   separator: ";"
 
-labels: en
+labels: de
 
 plot_scalar_results:
   agg_regions: true
