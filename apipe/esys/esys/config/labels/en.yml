@@ -28,18 +28,19 @@ heat_med-demand_ind: Heat (medium) demand (industry)
 heat_high-demand_ind: Heat (high) demand (industry)
 
 # Imports
-import-electricity: Electricity import
+electricity-import: Electricity import
 
 # Commodities
-commodity_biomass_solid: Biomass (solid)
-commodity_biomass_gas: Biogas
-commodity_residual_waste: Residual waste
-commodity-h2: Hydrogen
+biomass_solid-commodity: Biomass (solid)
+biomass_gas-commodity: Biogas
+residual_waste-commodity: Residual waste
+h2-commodity: Hydrogen
 
 # Volatile
 electricity-wind: Wind (onshore)
 electricity-pv_ground: PV (ground-mounted)
-electricity-pv_agri: PV (agriculture)
+electricity-pv_agri_horizontal: PV (agriculture horizontal)
+electricity-pv_agri_vertical: PV (agriculture vertical)
 electricity-pv_rooftop: PV (rooftop)
 heat_low_decentral_solarthermal_plant: Solar thermal collector (decentral)
 heat_low_decentral_geothermal_plant: Geothermal plant (decentral)
@@ -80,8 +81,9 @@ biomass_gas_bpchp_heat_low_central: Biogas backpressure CHP (low, central)
 biomass_gas_bpchp_heat_med: Biogas backpressure CHP (medium)
 
 # Storage
-heat_low_decentral_storage: Heat storage (low, decentral)
-electricity_storage_battery: Battery storage (electricity)
+electricity-small_battery_storage: Battery storage (small)
+electricity-large_battery_storage: Battery storage (large)
 
 # Excess
 h2-export: Hydrogen export
+electricity-export: Electricity export
