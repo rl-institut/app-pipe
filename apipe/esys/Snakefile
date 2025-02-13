@@ -16,6 +16,7 @@ include: "snakemake_rules/create_empty_ts.smk"
 include: "snakemake_rules/write_default_scalars.smk"
 include: "snakemake_rules/write_costs_efficiencies.smk"
 include: "snakemake_rules/write_ts.smk"
+include: "snakemake_rules/visualization.smk"
 
 rule make_esys_appdata:
     """

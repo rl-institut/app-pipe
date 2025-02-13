@@ -88,10 +88,10 @@ def load_yaml(file_path):
 
 LABELS = load_yaml(CONFIG_PATH / "labels" / f"{settings.labels}.yml")
 raw_colors = load_yaml(CONFIG_PATH / "colors.yml")
-COLORS = {}
+COLOR_DICT = {}
 for label, color in raw_colors.items():
     if label not in LABELS:
         continue
-    COLORS[LABELS[label]] = color
-    COLORS[f"{LABELS[label]} in"] = color
-    COLORS[f"{LABELS[label]} out"] = color
+    COLOR_DICT[LABELS[label]] = color
+    COLOR_DICT[f"{LABELS[label]} in"] = color
+    COLOR_DICT[f"{LABELS[label]} out"] = color
