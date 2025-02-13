@@ -521,7 +521,13 @@ if __name__ == "__main__":
     logger = esys_conf.add_snake_logger("plot_scalar_results")
 
     # User input
-    CARRIERS = ["electricity", "heat_low_central", "heat_low_decentral"]
+    CARRIERS = [
+        "electricity",
+        "heat_low_central",
+        "heat_low_decentral",
+        "heat_high",
+        "heat_med",
+    ]
     CARRIERS_WO_CH4 = CARRIERS
 
     # create the directory plotted where all plots are saved
