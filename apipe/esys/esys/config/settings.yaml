@@ -7,6 +7,11 @@ general:
 
 labels: de
 
+plot_scalar_results:
+  agg_regions: true
+  ignore_drop_level: "var_name"
+  tick_label_size: 12
+
 build_datapackage:
   el_gas_relation: electricity_gas_relation  # appears in optimize as well
   emission: emission
